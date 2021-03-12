@@ -60,6 +60,14 @@ module.exports = {
             resolve: "gatsby-source-wordpress",
             options: {
                 url: "https://amiciswordpress.thriveweb.co.uk/graphql",
+                minimizeDeprecationNotice: true,
+                searchAndReplaceContentUrls: {
+                  sourceUrl: "http://amicis-wordpress.example.com/graphql",
+                  replacementUrl: "https://amiciswordpress.thriveweb.co.uk/graphql",
+                },
+                normalizer: function({ entities }) {
+                  return entities
+                },
             },
         },
         {

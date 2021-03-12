@@ -4,11 +4,6 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
       allWpPage {
         nodes {
           uri
-          seo {
-            metaDesc
-            title
-            metaKeywords
-          }
           acf_components {
             components {
               __typename
@@ -117,6 +112,11 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
                 content
               }
             }
+          }
+          seo {
+            title
+            metaDesc
+            metaKeywords
           }
         }
       }

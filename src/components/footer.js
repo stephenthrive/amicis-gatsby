@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="w-full md:w-1/2">
           <ul>
             <li className="mb-4"><a href="mailto:hello@amicisgroup.co.uk" className="uppercase tracking-widest text-pink md:text-xl"><span>hello@amicisgroup.co.uk</span></a></li>
-            <li className="mb-4"><Link to="/privacy-policy" state={{modal: true}} className="uppercase tracking-widest text-white md:text-xl"><span>Privacy and cookies</span></Link></li>
-           	<li className="mb-8 md:mb-16"><Link to="/terms" state={{modal: true}} className="uppercase tracking-widest text-white md:text-xl"><span>Terms and Conditions</span></Link></li>
+            <li className="mb-4"><Link to="/privacy-and-cookies" state={{modal: true}} className="uppercase tracking-widest text-white md:text-xl"><span>Privacy and cookies</span></Link></li>
+           	<li className="mb-8 md:mb-16"><Link to="/terms-and-conditions" state={{modal: true}} className="uppercase tracking-widest text-white md:text-xl"><span>Terms and Conditions</span></Link></li>
           </ul>
           <div className="flex flex-wrap items-end ">
             <div className="w-full flex md:w-1/2 mb-8 md:mb-16">

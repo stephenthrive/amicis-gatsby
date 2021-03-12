@@ -30,7 +30,7 @@
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-source-wordpress": "^3.11.0",
+    "gatsby-source-wordpress": "^5.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "imagemin-pngquant": "^9.0.2",
     "pngquant-bin": "^6.0.0",
