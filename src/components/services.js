@@ -25,7 +25,7 @@ const Services = (props) => {
       <div className="custom-container flex">
         <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex items-center justify-center">
-            {props.data.contentAlignment=="Left" &&
+            {props.data.contentAlignment==="Left" &&
               <div>
                 <div className="flex">
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
@@ -36,15 +36,15 @@ const Services = (props) => {
                 <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
               </div>
             }
-            {props.data.contentAlignment=="Right" &&
+            {props.data.contentAlignment==="Right" &&
               <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
             }
-            {props.data.contentAlignment=="Right" &&
+            {props.data.contentAlignment==="Right" &&
               <div className="absolute -left-80  z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
             }
           </div>
           <div className="w-full lg:w-1/2 flex items-center justify-center">
-            {props.data.contentAlignment=="Right" &&
+            {props.data.contentAlignment==="Right" &&
               <div>
                 <div className="flex">
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
@@ -55,10 +55,10 @@ const Services = (props) => {
                 <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
               </div>
             }
-            {props.data.contentAlignment=="Left" &&
+            {props.data.contentAlignment==="Left" &&
               <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
             }
-            {props.data.contentAlignment=="Left" &&
+            {props.data.contentAlignment==="Left" &&
               <div className="absolute -right-80 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
             }
           </div>
