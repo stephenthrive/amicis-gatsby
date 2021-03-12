@@ -1,0 +1,72 @@
+import React from "react"
+
+const Services = (props) => {
+
+  if(props.data.title!==null) {props.data.title = '<h3 class="font-bold text-2xl md:text-4xl leading-tight">'+props.data.title+'</h3>';}
+  if(props.data.content!==null) {props.data.content = props.data.content.replace('<p>', '<p class="text-md sm:text-xl lg:pb-8">');}
+
+  let backgroundColor
+  let blockTextColor
+
+  if(props.data.blockBackgroundColour==='#191d35') { backgroundColor = 'bg-darkblue' }
+  if(props.data.blockBackgroundColour==='#ffffff') { backgroundColor = 'bg-white' }
+  if(props.data.blockBackgroundColour==='#e2003a') { backgroundColor = 'bg-pink' }
+  if(props.data.blockBackgroundColour==='#f9f9f9') { backgroundColor = 'bg-darkerlightergray' }
+
+  if(props.data.textColour==='#191d35') { blockTextColor = 'text-darkblue' }
+  if(props.data.textColour==='#ffffff') { blockTextColor = 'text-white' }
+  if(props.data.textColour==='#e2003a') { blockTextColor = 'text-pink' }
+  if(props.data.textColour==='#f9f9f9') { blockTextColor = 'text-darkerlightergray' }
+
+  // backgroundIcon
+
+  return (
+  	<section className={"relative overflow-hidden "+ backgroundColor +" "+ blockTextColor}>
+      <div className="custom-container flex">
+        <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
+          <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex items-center justify-center">
+            {props.data.contentAlignment=="Left" &&
+              <div>
+                <div className="flex">
+                  <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+                    <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+                  </div>
+                  <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
+                </div>
+                <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
+              </div>
+            }
+            {props.data.contentAlignment=="Right" &&
+              <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
+            }
+            {props.data.contentAlignment=="Right" &&
+              <div className="absolute -left-80  z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
+            }
+          </div>
+          <div className="w-full lg:w-1/2 flex items-center justify-center">
+            {props.data.contentAlignment=="Right" &&
+              <div>
+                <div className="flex">
+                  <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+                    <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+                  </div>
+                  <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
+                </div>
+                <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
+              </div>
+            }
+            {props.data.contentAlignment=="Left" &&
+              <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
+            }
+            {props.data.contentAlignment=="Left" &&
+              <div className="absolute -right-80 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
+            }
+          </div>
+        </div>
+      </div>
+    </section> 
+  )
+
+}
+
+export default Services;

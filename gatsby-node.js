@@ -1,0 +1,142 @@
+exports.createPages = async ({actions, graphql, reporter}) =>  {
+  const result = await graphql(`
+    {
+      allWpPage {
+        nodes {
+          uri
+          seo {
+            metaDesc
+            title
+            metaKeywords
+          }
+          acf_components {
+            components {
+              __typename
+              ... on WpPage_AcfComponents_Components_Header {
+                dots
+                subtitle
+                title
+                image {
+                  title
+                  altText
+                  localFile {
+                    childImageSharp {
+                      fixed(width: 1067, height: 690) {
+                        base64
+                        width
+                        height
+                        src
+                        srcSet
+                      }
+                    }
+                  }
+                }
+              }
+              ... on WpPage_AcfComponents_Components_Intro {
+                contentColumnOne
+                contentColumnTwo
+                title
+                button {
+                  target
+                  title
+                  url
+                }
+              }
+              ... on WpPage_AcfComponents_Components_IndustryLeading {
+                content
+                title
+                image {
+                  title
+                  altText
+                  localFile {
+                    childImageSharp {
+                      fixed(width: 894, height: 814) {
+                        base64
+                        width
+                        height
+                        src
+                        srcSet
+                      }
+                    }
+                  }
+                }
+                button {
+                  target
+                  title
+                  url
+                }
+              }
+              ... on WpPage_AcfComponents_Components_GetToKnowUs {
+                title
+              }
+              ... on WpPage_AcfComponents_Components_ContactForm {
+                title
+                paragraph
+                buttonText
+              }
+              ... on WpPage_AcfComponents_Components_Logos {
+                logosContent {
+                  __typename
+                  ... on WpPage_AcfComponents_Components_Logos_LogosContent_LogosContentFlexible {
+                    logo
+                  }
+                }
+              }
+              ... on WpPage_AcfComponents_Components_Icons {
+                iconsContent {
+                  ... on WpPage_AcfComponents_Components_Icons_IconsContent_IconsContentFlexible {
+                    icon
+                    title
+                  }
+                }
+              }
+              ... on WpPage_AcfComponents_Components_Services {
+                backgroundIcon
+                blockBackgroundColour
+                content
+                contentAlignment
+                imageIcon
+                textColour
+                title
+              }
+              ... on WpPage_AcfComponents_Components_Teams {
+                title
+                profiles {
+                  content
+                  contentExcerpt
+                  name
+                  title
+                  image {
+                    altText
+                    sourceUrl
+                    title
+                  }
+                }
+              }
+              ... on WpPage_AcfComponents_Components_FullContent {
+                content
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if(result?.errors) {
+    reporter.error("There was an error fetching posts", result.errors)
+  }
+
+  const { allWpPage } = result?.data
+
+  let template = require.resolve(`./src/templates/index.js`)
+
+  allWpPage.nodes.map(post => {
+    actions.createPage({
+      path: post.uri,
+      component: template,
+      context: post
+    })
+  })
+
+}

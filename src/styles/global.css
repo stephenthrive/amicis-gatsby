@@ -1,0 +1,165 @@
+/* ./src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.max-w-screen-xl {
+	max-width: 1366px;
+}
+
+.zoom {
+	zoom: 200%;
+}
+
+.shape {
+    width: 60vh;
+    height: 100vh;
+}
+
+.shape1 {
+	position: absolute;
+	top: -120px;
+	right: 80px;
+	z-index: 40;
+  	animation: shape1 0.5s ease-in-out forwards;
+  	display: none;
+}
+
+@media (min-width: 1024px) {
+	.shape1 {
+		display: block;
+	}
+}
+
+.shadowXl {
+   box-shadow: 0 0 transparent, 0 0 #0000,0 0 transparent, 0 0 #0000, 0 0 0 0 rgba(0, 0, 0, 0.1), 0px 0px 6px 6px rgba(0, 0, 0, 0.04);
+}
+
+.fullImage {
+  width: 140vh !important;
+  height: 100vh !important;
+  float: right;
+  animation: fullImage 0.5s ease-in-out forwards;
+}
+
+.ReactModalPortal {
+    position: relative;
+    z-index: 9999;	
+}
+
+.h-96 {
+    height: 38rem;
+}
+
+.logo {
+	width: 134px;
+	height: auto;
+}
+
+@media (min-width: 640px) {	
+	.logo {
+		width: 200px;
+		height: auto;
+	}
+}
+
+@media (min-width: 1024px) {
+	.logo {
+		width: 298px;
+	}
+}
+
+.h-75-screen {
+	height: 75vh;
+}
+
+
+.headerRight {
+	right: -123vw;
+}
+
+@media (min-width: 640px) {
+	.headerRight {
+		right: -78vw;
+	}
+}
+
+@media (min-width: 1024px) {
+	.headerRight {
+		right: 0;
+	}
+}
+
+@keyframes shape1 {
+	from {
+		top: -40vh;
+		right: 4vw;
+	}
+	to {
+		top: 0;
+		right: -3vw;
+	}
+}
+
+@keyframes fullImage {
+	from {
+		right: -30vw;
+	}
+	to {
+		right: 3vw;
+	}
+}
+
+.w-4px {
+	width: 4px;
+}
+
+.btn {
+	@apply text-center bg-pink text-white border-4 border-pink uppercase font-bold px-12 py-3 text-base tracking-widest transition ease-in-out duration-200;
+}
+
+@media (min-width: 768px) {
+	.btn {
+		@apply text-left text-lg;
+	}
+}
+
+.btn:hover {
+	@apply bg-white text-pink;
+}
+
+.btn-invert {
+	@apply bg-white text-pink border-white;
+}
+
+.btn-invert:hover {
+	@apply bg-pink text-white;
+}
+
+.custom-container {
+	@apply max-w-screen-xl mx-auto px-8 md:px-16;
+}
+
+.custom-cols {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.custom-cols {
+		width: calc(50% - 1.5rem);
+	}
+}
+
+@media (min-width: 1024px) {
+	.custom-cols {
+		width: calc(33.333333% - 1.5rem);
+	}
+}
+
+::selection {
+  	@apply bg-lightgray;
+}
+
+::-moz-selection {
+  	@apply bg-lightgray;	
+}
