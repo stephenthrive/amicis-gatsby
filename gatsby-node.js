@@ -3,6 +3,7 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
     {
       allWpPage {
         nodes {
+          id
           uri
           acf_components {
             components {
