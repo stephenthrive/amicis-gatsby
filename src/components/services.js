@@ -33,14 +33,15 @@ const Services = (props) => {
                   </div>
                   <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
                 </div>
+                <div className="w-32 lg:hidden relative z-20 mx-1/12 mt-8" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
                 <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
               </div>
             }
             {props.data.contentAlignment==="Right" &&
-              <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
+              <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
             }
             {props.data.contentAlignment==="Right" &&
-              <div className="absolute -left-80  z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
+              <div className="hidden lg:block absolute lg:-left-80 xlg:-left-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
             }
           </div>
           <div className="w-full lg:w-1/2 flex items-center justify-center">
@@ -52,14 +53,15 @@ const Services = (props) => {
                   </div>
                   <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
                 </div>
+                <div className="w-32 lg:hidden relative z-20 mx-1/12 mt-8" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
                 <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
               </div>
             }
             {props.data.contentAlignment==="Left" &&
-              <div className="w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
+              <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
             }
             {props.data.contentAlignment==="Left" &&
-              <div className="absolute -right-80 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
+              <div className="hidden lg:block absolute lg:-right-80 xlg:-right-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />
             }
           </div>
         </div>
