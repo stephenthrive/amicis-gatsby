@@ -26,7 +26,7 @@ const WpPage = (data) => {
         <meta name="keywords" content={data.pageContext.seo.metaKeywords} />
       </Helmet>
       <TopHeader />
-      <MainMenu />
+      <MainMenu data={data} />
       {data.pageContext.acf_components.components.map( acf => {
         if(acf.__typename==='WpPage_AcfComponents_Components_Header') {
           return (

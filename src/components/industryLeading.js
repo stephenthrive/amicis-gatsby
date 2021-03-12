@@ -6,7 +6,6 @@ const IndustryLeading = (props) => {
   if(props.data.content!==null) {props.data.content = props.data.content.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
   if(props.data.content!==null) {props.data.content = props.data.content.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
   if(props.data.button!==null) {props.data.button = '<a href="'+props.data.button.url+'" class="btn btn-invert block md:inline-block ">'+props.data.button.title+'</a>';}
-  if(props.data.image!==null) {props.data.image = '<img src="'+props.data.image.localFile.childImageSharp.fixed.src+'" alt="'+props.data.image.alt+'" title="'+props.data.image.title+'" class="w-full mb-6 md:mb-8 lg:mb-0" />';}
   
 
   return (
@@ -15,7 +14,7 @@ const IndustryLeading = (props) => {
         <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-0 xl:my-24">
           <div className="w-full lg:w-1/2">
             <div className="xl:mx-1/12">
-              <div dangerouslySetInnerHTML={{__html: props.data.image}} />
+              <img src={props.data.image.localFile.childImageSharp.fixed.src} alt={props.data.image.alt} title={props.data.image.title} class="w-full mb-6 md:mb-8 lg:mb-0" />
             </div>
           </div>
           <div className="w-full lg:w-1/2 lg:my-16 xl:my-0">
