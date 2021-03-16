@@ -12,7 +12,7 @@ const IndustryLeading = (props) => {
     <section className="bg-pink">
       <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-0 lg:pr-4 xl:px-4 flex text-white">
         <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-0 xl:my-24">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full hidden lg:block lg:w-1/2">
             <div className="xl:mx-1/12">
               <img src={props.data.image.localFile.childImageSharp.fixed.src} alt={props.data.image.alt} title={props.data.image.title} class="w-full mb-6 md:mb-8 lg:mb-0" />
             </div>
