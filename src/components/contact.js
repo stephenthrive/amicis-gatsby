@@ -6,7 +6,7 @@ const Contact = (props) => {
 
   return (
   	<section className="bg-white text-darkblue">
-	    <div className="custom-container flex py-12">
+	    <div className="custom-container flex pt-12">
 	    	<div className="w-full max-w-screen-xl mx-auto px-6 md:px-16 lg:px-20 py-6 md:py-12 lg:py-24 shadowXl">
 	    		<div className="flex flex-wrap">
 		        <div className="w-full lg:w-1/2">
