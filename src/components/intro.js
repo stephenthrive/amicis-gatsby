@@ -8,10 +8,10 @@ const Intro = (props) => {
   return (
     <section className="custom-container flex text-darkblue">
       <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
-        <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+        <div className="w-full lg:w-1/2 mb-6 md:mb-0">
           <div>
             {props.data.title && (
-              <div className="flex  mb-8 md:mb-12">
+              <div className="flex mb-8 md:mb-12">
                 <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
                   <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                 </div>

@@ -7,6 +7,12 @@
 	max-width: 1366px;
 }
 
+@media (min-width: 1024px) {
+  .max-w-screen-xl-half {
+    max-width: 618px;
+  }
+}
+
 .zoom {
 	zoom: 200%;
 }
@@ -140,6 +146,10 @@
 	@apply max-w-screen-xl mx-auto px-8 md:px-16;
 }
 
+.custom-container-half {
+  @apply max-w-screen-xl-half mx-auto;
+}
+
 .custom-cols {
 	width: 100%;
 }
@@ -175,6 +185,18 @@ body {
     @apply mb-8;
   }
 }
+
+#industryLeading p {
+  @apply mb-8;
+}
+
+@media (min-width: 640px) {
+  #industryLeading p {
+    @apply text-xl;
+  }
+}
+
+
 
 ::selection {
   	@apply bg-lightgray;
