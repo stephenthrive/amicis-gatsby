@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 
 const Intro = (props) => {
 
-  if(props.data.title!==null) {props.data.title = '<h3 class="font-bold text-2xl md:text-4xl leading-tight mb-8 md:mb-12">'+props.data.title+'</h3>';}
+  if(props.data.title!==null) {props.data.title = '<h3 class="font-bold text-2xl md:text-4xl leading-tight">'+props.data.title+'</h3>';}
   if(props.data.contentColumnOne!==null) {props.data.contentColumnOne = props.data.contentColumnOne.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
   if(props.data.contentColumnOne!==null) {props.data.contentColumnTwo = props.data.contentColumnTwo.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
 
@@ -12,15 +12,19 @@ const Intro = (props) => {
       <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
         <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
           <div>
-            <div className="flex">
-              <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
-                <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+            {props.data.title && (
+              <div className="flex  mb-8 md:mb-12">
+                <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+                  <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+                </div>
+                <div class="w-10/12 lg:mr-1/12 lg:ml-2">
+                  <div dangerouslySetInnerHTML={{__html: props.data.title}} />
+                </div>
               </div>
-              <div class="w-10/12 lg:mr-1/12">
-                <div dangerouslySetInnerHTML={{__html: props.data.title}} />
-                <div dangerouslySetInnerHTML={{__html: props.data.contentColumnOne}} />
-                <Link to={props.data.button.url} className="btn hidden lg:inline-block">{props.data.button.title}</Link>
-              </div>
+            )}
+            <div className="flex w-full flex-wrap lg:px-1/12 lg:ml-2">
+              <div dangerouslySetInnerHTML={{__html: props.data.contentColumnOne}} />
+              <Link to={props.data.button.url} className="btn hidden lg:inline-block">{props.data.button.title}</Link>
             </div>
           </div>
         </div>

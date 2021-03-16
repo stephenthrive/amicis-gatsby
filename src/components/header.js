@@ -6,7 +6,7 @@ const Header = (props) => {
   if(props.data.dots) {props.data.dots = '<img src="'+dots+'" alt="dots" className="w-5/12 " />';}
 
   return (
-    <section className="text-white bg-darkblue relative border-t-8 border-pink">
+    <section className="text-white bg-darkblue relative border-t-8 border-pink overflow-hidden">
     	<div className="custom-container flex relative z-30 overflow-hidden">
         <div className="w-full flex flex-wrap items-center">
           <div className="w-full lg:w-7/12 my-8">
@@ -33,7 +33,7 @@ const Header = (props) => {
       <div className="hidden lg:flex w-full h-80 overflow-hidden justify-end absolute top-0 z-10">
         <img src={props.data.image.localFile.childImageSharp.fixed.src} alt={props.data.image.alt} title={props.data.image.title} className="w-5/12" />
       </div>
-      <div className="hidden lg:flex w-full items-end h-80 overflow-hidden justify-end absolute top-0 z-20" dangerouslySetInnerHTML={{__html: props.data.dots}} />
+      <div className="hidden lg:flex w-full items-end h-80 overflow-hidden justify-end absolute top-0 left-40 z-20" dangerouslySetInnerHTML={{__html: props.data.dots}} />
     </section>
   )
 

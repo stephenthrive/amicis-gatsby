@@ -5,8 +5,6 @@ import twitter3 from '../images/twitter3.png'
 
 const GetToKnow = (props) => {
 
-  if(props.data.title!==null) {props.data.title = '<h3 class="w-10/12 lg:mr-1/12>'+props.data.title+'</h3>';}
-
   return (
     <section className="bg-darkblue text-white">
       <div className="custom-container flex">
@@ -17,7 +15,9 @@ const GetToKnow = (props) => {
                 <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
                   <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                 </div>
-                <div dangerouslySetInnerHTML={{__html: props.data.title}} />
+                {props.data.title && (
+                  <h3 class="w-10/12 lg:mr-1/12 lg:pl-2">{props.data.title}</h3>
+                )}
               </div>
             </div>
           </div>

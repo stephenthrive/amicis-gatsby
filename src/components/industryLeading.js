@@ -19,7 +19,7 @@ const IndustryLeading = (props) => {
           </div>
           <div className="w-full lg:w-1/2 lg:my-16 xl:my-0">
             <div className="flex font-bold text-2xl md:text-4xl leading-tight mb-8 md:mb-12">
-              <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+              <div className="mr-4 md:mr-8 lg:mr-2 lg:w-1/12">
                 <div className="w-4px bg-white h-full lg:mx-auto"></div>
               </div>
               <div dangerouslySetInnerHTML={{__html: props.data.title}} />
