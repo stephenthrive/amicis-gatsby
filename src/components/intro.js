@@ -4,8 +4,6 @@ import {Link} from "gatsby"
 const Intro = (props) => {
 
   if(props.data.title!==null) {props.data.title = '<h3 class="font-bold text-2xl md:text-4xl leading-tight">'+props.data.title+'</h3>';}
-  if(props.data.contentColumnOne!==null) {props.data.contentColumnOne = props.data.contentColumnOne.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
-  if(props.data.contentColumnOne!==null) {props.data.contentColumnTwo = props.data.contentColumnTwo.replace('<p>', '<p class="text-md sm:text-xl lg:mb-8">');}
 
   return (
     <section className="custom-container flex text-darkblue">
@@ -22,14 +20,14 @@ const Intro = (props) => {
                 </div>
               </div>
             )}
-            <div className="flex w-full flex-wrap lg:px-1/12 lg:ml-2">
+            <div className="flex w-full flex-wrap lg:px-1/12 lg:ml-2 introcontent">
               <div dangerouslySetInnerHTML={{__html: props.data.contentColumnOne}} />
               <Link to={props.data.button.url} className="btn hidden lg:inline-block">{props.data.button.title}</Link>
             </div>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
-          <div class="lg:mx-1/12">
+          <div class="lg:mx-1/12 introcontent">
             <div dangerouslySetInnerHTML={{__html: props.data.contentColumnTwo}} />
             <div class="pt-4 md:pt-0">
               <Link to={props.data.button.url} className="btn block md:inline-block lg:hidden">{props.data.button.title}</Link>

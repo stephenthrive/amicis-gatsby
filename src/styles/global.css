@@ -156,6 +156,26 @@
 	}
 }
 
+body {
+  font-family: 'soleil', 'sans-serif';
+}
+
+.introcontent p {
+  @apply text-base;
+}
+
+@media (min-width: 640px) {
+  .introcontent p {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  .introcontent p {
+    @apply mb-8;
+  }
+}
+
 ::selection {
   	@apply bg-lightgray;
 }
