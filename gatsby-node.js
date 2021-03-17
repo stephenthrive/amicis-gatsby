@@ -102,10 +102,20 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
                   contentExcerpt
                   name
                   title
+                  linkedinUrl
                   image {
                     altText
                     sourceUrl
                     title
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 148
+                          height: 148
+                          placeholder: DOMINANT_COLOR
+                        )
+                      }
+                    }
                   }
                 }
               }

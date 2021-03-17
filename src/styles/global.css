@@ -196,7 +196,9 @@ body {
   }
 }
 
-
+#team p {
+  @apply text-white font-light;
+}
 
 ::selection {
   	@apply bg-lightgray;
