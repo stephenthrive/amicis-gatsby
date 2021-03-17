@@ -6,7 +6,7 @@ const Header = (props) => {
   if(props.data.dots) {props.data.dots = '<img src="'+dots+'" alt="dots" className="w-5/12 " />';}
 
   return (
-    <section className="text-white bg-darkblue relative border-t-8 border-pink overflow-hidden">
+    <section id="header" className="text-white bg-darkblue relative border-t-8 border-pink overflow-hidden">
     	<div className="custom-container flex relative z-30 overflow-hidden">
         <div className="w-full flex flex-wrap items-center">
           <div className="w-full lg:w-7/12 my-8">

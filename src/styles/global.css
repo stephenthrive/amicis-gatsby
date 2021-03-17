@@ -170,21 +170,27 @@ body {
   font-family: 'soleil', 'sans-serif';
 }
 
-.introcontent p {
-  @apply text-base;
+::selection {
+  	@apply bg-lightgray;
+}
+
+::-moz-selection {
+  	@apply bg-lightgray;	
+}
+
+/* ######################## contact ########################*/
+
+#contact p {
+  @apply text-base mb-10 text-darkblue pt-8;
 }
 
 @media (min-width: 640px) {
-  .introcontent p {
+  #contact p {
     @apply text-xl;
   }
 }
 
-@media (min-width: 1024px) {
-  .introcontent p {
-    @apply mb-8;
-  }
-}
+/* ######################## industryLeading ########################*/
 
 #industryLeading p {
   @apply mb-8;
@@ -196,14 +202,42 @@ body {
   }
 }
 
+/* ######################## intro ########################*/
+
+#intro p {
+  @apply text-base;
+}
+
+@media (min-width: 640px) {
+  #intro p {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  #intro p {
+    @apply mb-8;
+  }
+}
+
+#services p {
+  @apply text-base;
+}
+
+@media (min-width: 640px) {
+  #services p {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  #services p {
+    @apply mb-8;
+  }
+}
+
+/* ######################## team ########################*/
+
 #team p {
   @apply text-white font-light;
-}
-
-::selection {
-  	@apply bg-lightgray;
-}
-
-::-moz-selection {
-  	@apply bg-lightgray;	
 }

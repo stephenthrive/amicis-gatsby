@@ -2,7 +2,7 @@ import React from "react"
 
 const Icons = (props) => {
   return (
-    <section className="bg-darkerlightergray overflow-hidden">
+    <section id="icons" className="bg-darkerlightergray overflow-hidden">
       <div class="-mr-6 lg:-mr-0">
         <div className="custom-container py-12 lg:py-24 flex flex-wrap justify-center">
           {props.data.iconsContent.map( icons => {

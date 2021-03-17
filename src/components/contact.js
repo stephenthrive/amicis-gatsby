@@ -2,10 +2,8 @@ import React from "react"
 
 const Contact = (props) => {
 
-  if(props.data.paragraph!==null) {props.data.paragraph = props.data.paragraph.replace('<p>', '<p class="text-md sm:text-xl mb-10 text-darkblue pt-8">');}
-
   return (
-  	<section className="bg-white text-darkblue">
+  	<section id="contact" className="bg-white text-darkblue">
 	    <div className="custom-container flex pt-12">
 	    	<div className="w-full max-w-screen-xl mx-auto px-6 md:px-16 lg:px-20 py-6 md:py-12 lg:py-24 shadowXl">
 	    		<div className="flex flex-wrap">
@@ -16,10 +14,10 @@ const Contact = (props) => {
 		                <div className="w-4px bg-pink h-full lg:mx-auto"></div>
 		              </div>
                   <div className="w-10/12 lg:mr-1/12">
-                    <h3 className="flex font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>
+                    {props.data.title && <h3 className="flex font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
                   </div>
 		            </div>
-                <div className="lg:mx-1/12" dangerouslySetInnerHTML={{__html: props.data.paragraph}} />
+                {props.data.paragraph && <div className="lg:mx-1/12" dangerouslySetInnerHTML={{__html: props.data.paragraph}} />}
 		          </div>
 		        </div>
 		        <div className="w-full lg:w-1/2">

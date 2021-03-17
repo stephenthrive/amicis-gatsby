@@ -6,7 +6,7 @@ import twitter3 from '../images/twitter3.png'
 const GetToKnow = (props) => {
 
   return (
-    <section className="bg-darkblue text-white">
+    <section id="gettoknow" className="bg-darkblue text-white">
       <div className="custom-container flex">
         <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
           <div className="w-5/6 lg:w-1/2">

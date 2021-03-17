@@ -2,7 +2,7 @@ import React from "react"
 
 const Logos = (props) => {
   return (
-    <section className="bg-darkerlightergray overflow-hidden">
+    <section id="logo" className="bg-darkerlightergray overflow-hidden">
       <div class="-mr-6 lg:-mr-0">
         <div className="custom-container py-12 lg:py-24 flex flex-wrap">
           {props.data.logosContent.map( logos => {

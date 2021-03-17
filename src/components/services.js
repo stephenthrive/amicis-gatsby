@@ -2,9 +2,6 @@ import React from "react"
 
 const Services = (props) => {
 
-  if(props.data.title!==null) {props.data.title = '<h3 class="font-bold text-2xl md:text-4xl leading-tight">'+props.data.title+'</h3>';}
-  if(props.data.content!==null) {props.data.content = props.data.content.replace('<p>', '<p class="text-md sm:text-xl lg:pb-8">');}
-
   let backgroundColor
   let blockTextColor
 
@@ -21,7 +18,7 @@ const Services = (props) => {
   // backgroundIcon
 
   return (
-  	<section className={"relative overflow-hidden "+ backgroundColor +" "+ blockTextColor}>
+  	<section id="services" className={"relative overflow-hidden "+ backgroundColor +" "+ blockTextColor}>
       <div className="custom-container flex">
         <div className="w-full flex flex-wrap my-8 md:my-16 lg:my-24">
           <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex items-center justify-center">
@@ -31,10 +28,16 @@ const Services = (props) => {
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
                     <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                   </div>
-                  <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
+                  <div className="w-10/12 lg:mr-1/12">
+                    {props.data.contentAlignment && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
+                  </div>
                 </div>
                 <div className="w-32 lg:hidden relative z-20 mx-1/12 mt-8" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
-                <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
+                {props.data.contentAlignment && 
+                  <div className="mx-1/12 mt-8 md:mt-12">
+                    {props.data.content}
+                  </div>
+                }
               </div>
             }
             {props.data.contentAlignment==="Right" &&

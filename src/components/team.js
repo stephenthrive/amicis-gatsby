@@ -5,9 +5,7 @@ const Team = (props) => {
 
   const [isActive, setActive] = useState("false");
 
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
+  const handleToggle = () => {setActive(!isActive);};
     
   return (
     <section id="team" className="bg-darkblue">
@@ -29,7 +27,7 @@ const Team = (props) => {
           </div>
         </div>
         <div className="flex flex-wrap mx-2 md:mx-8 lg:-mx-4">
-          {props.data.profiles.map(profile => {
+          {props.data.profiles.map((profile, index) => {
             return(
               <div className="px-4 w-full pb-6 md:w-1/2 lg:w-1/4 lg:pb-0">
                 {profile.image && <GatsbyImage
@@ -69,7 +67,7 @@ const Team = (props) => {
           })}
         </div>
         <div className="flex-wrap -mx-4 hidden lg:flex">   
-          {props.data.profiles.map(profile => (
+          {props.data.profiles.map((profile, i) => (
             <div className="px-4 w-full md:w-1/4">
               <div className="w-full relative mb-10">
                 {profile.linkedinUrl && 
@@ -82,7 +80,7 @@ const Team = (props) => {
           ))}
         </div>
         <div className="flex-wrap -mx-4 hidden md:flex">
-          {props.data.profiles.map(profile => (
+          {props.data.profiles.map((profile, i) => (
             <div className="px-4 w-full md:w-2/4 lg:w-1/4 md:hidden lg:flex">
               <div className="w-full relative mb-10">
                 <button className="text-pink text-center w-full text-sm uppercase absolute z-20" onClick={handleToggle}><span className="bg-darkblue px-3">{isActive ? "Show More" : "Show Less"}</span></button>
