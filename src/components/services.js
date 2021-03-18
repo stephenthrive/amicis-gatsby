@@ -37,10 +37,10 @@ const Services = (props) => {
               </div>
             }
             {props.data.contentAlignment==="Right" &&
-              {props.data.imageIcon && <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />}
+              <>{props.data.imageIcon && <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />}</>
             }
             {props.data.contentAlignment==="Right" &&
-              {props.data.backgroundIcon && <div className="hidden lg:block absolute lg:-left-80 xlg:-left-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />}
+              <>{props.data.backgroundIcon && <div className="hidden lg:block absolute lg:-left-80 xlg:-left-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />}</>
             }
           </div>
           <div className="w-full lg:w-1/2 flex items-center justify-center">
@@ -59,10 +59,10 @@ const Services = (props) => {
               </div>
             }
             {props.data.contentAlignment==="Left" &&
-              {props.data.imageIcon && <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />}
+              <>{props.data.imageIcon && <div className="hidden lg:flex w-72 relative z-20" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />}</>
             }
             {props.data.contentAlignment==="Left" &&
-              {props.data.backgroundIcon && <div className="hidden lg:block absolute lg:-right-80 xlg:-right-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />}
+              <>{props.data.backgroundIcon && <div className="hidden lg:block absolute lg:-right-80 xlg:-right-32 z-10 h-full w-1/2" dangerouslySetInnerHTML={{__html: props.data.backgroundIcon}} />}</>
             }
           </div>
         </div>
