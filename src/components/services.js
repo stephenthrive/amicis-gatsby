@@ -26,7 +26,10 @@ const Services = (props) => {
               <div>
                 <div className="flex">
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
-                    <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+                    {backgroundColor==="bg-darkblue" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-white" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-pink" && <div className="w-4px bg-white h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-darkerlightergray" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
                   </div>
                   <div className="w-10/12 lg:mr-1/12">
                     {props.data.title && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
@@ -48,7 +51,10 @@ const Services = (props) => {
               <div>
                 <div className="flex">
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
-                    <div className="w-4px bg-pink h-full lg:mx-auto"></div>
+                    {backgroundColor==="bg-darkblue" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-white" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-pink" && <div className="w-4px bg-white h-full lg:mx-auto"></div>}
+                    {backgroundColor==="bg-darkerlightergray" && <div className="w-4px bg-pink h-full lg:mx-auto"></div>}
                   </div>
                   <div className="w-10/12 lg:mr-1/12">
                     {props.data.title && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
