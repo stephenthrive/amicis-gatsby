@@ -29,7 +29,7 @@ const Services = (props) => {
                     <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                   </div>
                   <div className="w-10/12 lg:mr-1/12">
-                    {props.data.contentAlignment && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
+                    {props.data.title && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
                   </div>
                 </div>
                 <div className="w-32 lg:hidden relative z-20 mx-1/12 mt-8" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
@@ -54,7 +54,9 @@ const Services = (props) => {
                   <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
                     <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                   </div>
-                  <div className="w-10/12 lg:mr-1/12" dangerouslySetInnerHTML={{__html: props.data.title}} />
+                  <div className="w-10/12 lg:mr-1/12">
+                    {props.data.title && <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>}
+                  </div>
                 </div>
                 <div className="w-32 lg:hidden relative z-20 mx-1/12 mt-8" dangerouslySetInnerHTML={{__html: props.data.imageIcon}} />
                 <div className="mx-1/12 mt-8 md:mt-12" dangerouslySetInnerHTML={{__html: props.data.content}} />
