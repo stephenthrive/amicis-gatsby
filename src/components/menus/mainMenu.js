@@ -12,7 +12,7 @@ const MainMenu = () => {
   return (
 	<section>
 		<div className="custom-container py-8 flex flex-col sm:flex-row sm:items-center justify-between relative">
-      <Link to="/"><svg id="Component_39_3" data-name="Component 39 – 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201.674 69.22" class="w-32 sm:w-48">
+      <Link to="/"><svg id="Component_39_3" data-name="Component 39 – 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201.674 69.22" className="w-32 sm:w-48">
 			  <g id="Group_286" data-name="Group 286" transform="translate(-19.723 -50.493)">
 			    <path id="Path_219" data-name="Path 219" d="M142.726,52.637h12.081l9.842,15.971,9.84-15.971h12.082V93.889H175.2V70.2L164.649,86.345h-.237L153.923,70.316V93.889h-11.2Z" transform="translate(-76.203 -1.318)" fill="#191d35"/>
 			    <rect id="Rectangle_22" data-name="Rectangle 22" width="11.491" height="41.252" transform="translate(115.626 51.319)" fill="#191d35"/>
@@ -25,8 +25,8 @@ const MainMenu = () => {
 			  </g>
 			</svg></Link>
 			<div>
-				<div class="hidden sm:flex justify-end mb-5">
-					<div class="flex">
+				<div className="hidden sm:flex justify-end mb-5">
+					<div className="flex">
 						<a href="https://twitter.com/AmicisGroup" rel="noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.282 19.734" className="w-6 transition fill-current text-lightgray hover:text-darkblue">
 						  <path id="Path_148" data-name="Path 148" d="M938.064-59.717a14.078,14.078,0,0,0,14.174-14.175c0-.216,0-.43-.014-.644a10.137,10.137,0,0,0,2.485-2.58,9.948,9.948,0,0,1-2.861.785,5,5,0,0,0,2.191-2.756,9.991,9.991,0,0,1-3.163,1.209,4.977,4.977,0,0,0-3.637-1.574,4.983,4.983,0,0,0-4.983,4.981,4.959,4.959,0,0,0,.129,1.136,14.143,14.143,0,0,1-10.269-5.205,4.965,4.965,0,0,0-.675,2.5,4.978,4.978,0,0,0,2.217,4.147,4.948,4.948,0,0,1-2.257-.623c0,.021,0,.042,0,.064a4.983,4.983,0,0,0,4,4.884,4.994,4.994,0,0,1-1.313.175,4.966,4.966,0,0,1-.936-.09,4.987,4.987,0,0,0,4.654,3.46,10,10,0,0,1-6.188,2.133,10.055,10.055,0,0,1-1.189-.069,14.1,14.1,0,0,0,7.637,2.238" transform="translate(-930.427 79.451)" />
 						</svg></a>

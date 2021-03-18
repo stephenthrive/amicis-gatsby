@@ -1,7 +1,8 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const IndustryLeading = (props) => {
-  
+  const image = getImage(props.data.image.localFile)
   return (
     <section id="industryLeading" className="bg-pink">
       <div className="flex text-white">
@@ -9,7 +10,12 @@ const IndustryLeading = (props) => {
           <div className="w-full hidden lg:block lg:w-1/2">
             {props.data.image &&
               <div>
-                <img src={props.data.image.localFile.childImageSharp.fixed.src} alt={props.data.image.alt} title={props.data.image.title} class="w-full mb-6 md:mb-8 lg:mb-0" />
+                <GatsbyImage
+                  image={image}
+                  alt={props.data.image.alt}
+                  title={props.data.image.title}
+                  className="w-full mb-6 md:mb-8 lg:mb-0"
+                />
               </div>
             }
           </div>
@@ -29,7 +35,7 @@ const IndustryLeading = (props) => {
                 }
                 {props.data.button && 
                   <div className="pt-4">
-                    <a href={props.data.button.url} class="btn btn-invert block md:inline-block ">{props.data.button.title}</a>
+                    <a href={props.data.button.url} className="btn btn-invert block md:inline-block ">{props.data.button.title}</a>
                   </div>
                 }
               </div>

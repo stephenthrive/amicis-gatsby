@@ -17,13 +17,12 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
                   altText
                   localFile {
                     childImageSharp {
-                      fixed(width: 1067, height: 690) {
-                        base64
-                        width
-                        height
-                        src
-                        srcSet
-                      }
+                      gatsbyImageData(
+                        width: 1067
+                        height: 690
+                        backgroundColor: "#191D35"
+                        placeholder: NONE
+                      )
                     }
                   }
                 }
@@ -46,13 +45,12 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
                   altText
                   localFile {
                     childImageSharp {
-                      fixed(width: 894, height: 814) {
-                        base64
-                        width
-                        height
-                        src
-                        srcSet
-                      }
+                      gatsbyImageData(
+                        width: 894
+                        height: 814
+                        backgroundColor: "191D35"
+                        placeholder: NONE
+                      )
                     }
                   }
                 }

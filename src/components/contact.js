@@ -40,37 +40,37 @@ const Contact = (props) => {
 	          <input type="hidden" name="form-name" value="contact" />
 	          <div className="flex flex-wrap lg:mb-6">
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 	              	<input className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none" id="name" name="name" type="text" placeholder="Name" required />
 	              </div>
 	            </div>
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 	              	<input className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none" id="email" name="email" type="email" placeholder="Email" required />
 	              </div>
 	            </div>
 	          </div>
 	          <div className="flex flex-wrap lg:mb-6">
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 	              	<input className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none" id="tel" name="tel" type="tel" placeholder="Phone" required />
 	              </div>
 	            </div>
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 	              	<input className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none" id="company" name="company" type="text" placeholder="Company" required />
 	              </div>
 	            </div>
 	          </div>
 	          <div className="flex flex-wrap lg:mb-6">
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 		              <label htmlFor="message" className="block w-full pb-2 text-darkblue uppercase tracking-widest">Message</label>
 		              <textarea id="message" name="message" className="w-full border-2 border-pink mb-4 p-2 text-darkblue uppercase tracking-widest outline-none rounded-none" required></textarea>
 		            </div>
 	            </div>
 	            <div className="w-full lg:w-1/2">
-	            	<div class="lg:mx-1/12">
+	            	<div className="lg:mx-1/12">
 		              <label className="flex mb-4 lg:max-w-sm lg:pr-12 lg:pt-8">
 		                <input className="mr-2 checkbox zoom" id="consent" name="consent" type="checkbox" value="yes" />
 		                <span>I would like subscribe to updates from Amicis and understand the privacy policy.</span>
@@ -80,7 +80,7 @@ const Contact = (props) => {
 	          </div>
 	          <div className="flex flex-wrap lg:mb-6">
 	          	<div className="w-full lg:w-1/2">
-	          		<div class="lg:mx-1/12">
+	          		<div className="lg:mx-1/12">
 	          			<button type="submit" className="bg-pink hover:bg-white text-white hover:text-pink border-4 border-pink uppercase font-bold px-12 py-3 text-lg tracking-widest w-full lg:w-auto block text-center lg:inline-block">Submit</button>
 	          		</div>
 	          	</div>

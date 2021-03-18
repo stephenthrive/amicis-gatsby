@@ -12,8 +12,8 @@ const Intro = (props) => {
                 <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
                   <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                 </div>
-                <div class="w-10/12 lg:mr-1/12 lg:ml-2">
-                  <h3 class="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>
+                <div className="w-10/12 lg:mr-1/12 lg:ml-2">
+                  <h3 className="font-bold text-2xl md:text-4xl leading-tight">{props.data.title}</h3>
                 </div>
               </div>
             )}
@@ -24,10 +24,10 @@ const Intro = (props) => {
           </div>
         </div>
         <div className="w-full lg:w-1/2">
-          <div class="lg:mx-1/12">
+          <div className="lg:mx-1/12">
             {props.data.contentColumnTwo && <div dangerouslySetInnerHTML={{__html: props.data.contentColumnTwo}} />}
             {props.data.button && 
-              <div class="pt-4 md:pt-0">
+              <div className="pt-4 md:pt-0">
                 <Link to={props.data.button.url} className="btn block md:inline-block lg:hidden">{props.data.button.title}</Link>
               </div>
             }

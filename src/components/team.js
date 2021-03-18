@@ -17,7 +17,7 @@ const Team = (props) => {
                 <div className="mr-4 md:mr-8 lg:mr-0 lg:w-0.5/12">
                   <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                 </div>
-                <div class="w-10/12 lg:mr-1/12">
+                <div className="w-10/12 lg:mr-1/12">
                 {props.data.title && (
                   <h3 className="font-bold text-3xl md:text-4xl leading-tight text-white">{props.data.title}</h3>
                 )}
