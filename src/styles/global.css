@@ -178,6 +178,10 @@ body {
   	@apply bg-lightgray;	
 }
 
+.list-disc {
+    list-style-type: disc;
+}
+
 /* ######################## contact ########################*/
 
 #contact p {
