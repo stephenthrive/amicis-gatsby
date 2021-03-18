@@ -48,7 +48,6 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
                       gatsbyImageData(
                         width: 894
                         height: 814
-                        backgroundColor: "191D35"
                         placeholder: NONE
                       )
                     }
