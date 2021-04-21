@@ -1,4 +1,4 @@
-exports.createPages = async ({actions, graphql, reporter}) =>  {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       allWpPage {
@@ -131,7 +131,7 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
     }
   `)
 
-  if(result.errors) {
+  if (result.errors) {
     reporter.error("There was an error fetching posts", result.errors)
   }
 
@@ -143,8 +143,7 @@ exports.createPages = async ({actions, graphql, reporter}) =>  {
     actions.createPage({
       path: post.uri,
       component: template,
-      context: post
+      context: post,
     })
   })
-
 }
