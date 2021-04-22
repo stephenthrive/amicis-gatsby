@@ -32,17 +32,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 contentColumnLeft
                 ctaColumnLeft {
                   buttonLeft {
-                    target
-                    title
                     url
+                    title
                   }
                 }
                 contentColumnRight
                 ctaColumnRight {
                   buttonRight {
-                    target
-                    title
                     url
+                    title
                   }
                 }
               }
