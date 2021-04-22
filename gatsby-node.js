@@ -28,13 +28,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 }
               }
               ... on WpPage_AcfComponents_Components_Intro {
-                contentColumnOne
-                contentColumnTwo
                 title
-                button {
-                  target
-                  title
-                  url
+                contentColumnLeft
+                ctaColumnLeft {
+                  buttonLeft {
+                    target
+                    title
+                    url
+                  }
+                }
+                contentColumnRight
+                ctaColumnRight {
+                  buttonRight {
+                    target
+                    title
+                    url
+                  }
                 }
               }
               ... on WpPage_AcfComponents_Components_IndustryLeading {

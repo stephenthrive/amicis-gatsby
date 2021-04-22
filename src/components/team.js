@@ -91,8 +91,8 @@ const Team = props => {
             ))}
           </div>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
-            {props.data.profiles.map(profile => (
-              <div className="relative group">
+            {props.data.profiles.map((profile, index) => (
+              <div key={index} className="relative group">
                 {profile.image && (
                   <GatsbyImage
                     image={getImage(profile.image.localFile)}
