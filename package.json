@@ -44,7 +44,7 @@
     "react-slick": "^0.27.12",
     "react-string-replace": "^0.4.4",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.1.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"

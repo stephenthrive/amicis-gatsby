@@ -60,7 +60,6 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://amiciswordpress.thriveweb.co.uk/graphql",
-        presets: null,
       },
     },
     {

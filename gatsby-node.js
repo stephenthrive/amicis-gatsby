@@ -92,6 +92,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 textColour
                 title
               }
+              ... on WpPage_AcfComponents_Components_ServicesType {
+                title
+                content
+                service {
+                  titleService
+                  contentService
+                  iconService {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                  }
+                }
+                cta {
+                  titleCta
+                  linkCta {
+                    ... on WpPage {
+                      uri
+                    }
+                  }
+                }
+              }
               ... on WpPage_AcfComponents_Components_Teams {
                 title
                 profiles {
@@ -106,11 +129,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     title
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(
-                          width: 148
-                          height: 148
-                          placeholder: DOMINANT_COLOR
-                        )
+                        gatsbyImageData(placeholder: DOMINANT_COLOR)
                       }
                     }
                   }
