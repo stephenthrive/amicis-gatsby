@@ -5,10 +5,10 @@ const Intro = props => {
   return (
     <section id="intro" className="custom-container flex text-darkblue">
       <div className="my-8 md:my-16 lg:flex lg:justify-between lg:my-24">
-        <div className="lg:w-1/2 mb-6 lg:mb-0">
+        <div className="mb-6 lg:w-1/2 lg:mb-0">
           {props.data.title && (
             <div className="flex mb-8 md:mb-12">
-              <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+              <div className="mr-4 lg:mr-0 lg:w-1/12">
                 <div className="w-4px bg-pink h-full lg:mx-auto"></div>
               </div>
               <div className="w-10/12 lg:mr-1/12 lg:ml-2">
@@ -50,7 +50,7 @@ const Intro = props => {
             )}
 
             {props.data.ctaColumnRight && (
-              <div className="lg:ml-1/12">
+              <div className="lg:ml-1/12 space-y-4 space-x-4 lg:space-x-0">
                 {props.data.ctaColumnRight.map(item => (
                   <Link to={item.buttonRight.url} className="btn inline-block">
                     {item.buttonRight.title}

@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   }
                 }
               }
-              ... on WpPage_AcfComponents_Components_IndustryLeading {
+              ... on WpPage_AcfComponents_Components_IndustryCyber {
                 content
                 title
                 image {
@@ -66,13 +66,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   url
                 }
               }
+              ... on WpPage_AcfComponents_Components_IndustryTraining {
+                content
+                title
+                image {
+                  title
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 919
+                        height: 562
+                        placeholder: NONE
+                      )
+                    }
+                  }
+                }
+                button {
+                  target
+                  title
+                  url
+                }
+              }
               ... on WpPage_AcfComponents_Components_GetToKnowUs {
                 title
               }
               ... on WpPage_AcfComponents_Components_ContactForm {
-                title
-                paragraph
-                buttonText
+                fieldGroupName
               }
               ... on WpPage_AcfComponents_Components_Logos {
                 logosContent {
@@ -90,18 +110,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   }
                 }
               }
-              ... on WpPage_AcfComponents_Components_Services {
-                backgroundIcon
-                blockBackgroundColour
-                content
-                contentAlignment
-                imageIcon
-                textColour
-                title
-              }
               ... on WpPage_AcfComponents_Components_ServicesType {
                 title
-                content
                 service {
                   titleService
                   contentService
@@ -116,9 +126,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 cta {
                   titleCta
                   linkCta {
-                    ... on WpPage {
-                      uri
-                    }
+                    url
+                    title
                   }
                 }
               }
@@ -126,7 +135,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 title
                 profiles {
                   content
-                  contentExcerpt
                   name
                   title
                   linkedinUrl

@@ -6,7 +6,8 @@ import TopHeader from "../components/topHeader.js"
 import MainMenu from "../components/menus/mainMenu.js"
 import Header from "../components/header.js"
 import Intro from "../components/intro.js"
-import IndustryLeading from "../components/industryLeading.js"
+import IndustryCyber from "../components/industryCyber.js"
+import IndustryTraining from "../components/industryTraining.js"
 import GetToKnow from "../components/gettoknow.js"
 import ContactForm from "../components/contact.js"
 import Logos from "../components/logos.js"
@@ -36,9 +37,14 @@ const WpPage = data => {
           return <Intro data={acf} />
         }
         if (
-          acf.__typename === "WpPage_AcfComponents_Components_IndustryLeading"
+          acf.__typename === "WpPage_AcfComponents_Components_IndustryCyber"
         ) {
-          return <IndustryLeading data={acf} />
+          return <IndustryCyber data={acf} />
+        }
+        if (
+          acf.__typename === "WpPage_AcfComponents_Components_IndustryTraining"
+        ) {
+          return <IndustryTraining data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_GetToKnowUs") {
           return <GetToKnow data={acf} />
