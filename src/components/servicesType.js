@@ -2,11 +2,13 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 const ServicesType = props => {
-  const [isActive, setActive] = useState("false")
+  const [clicked, setClicked] = useState(false)
 
-  const handleToggle = e => {
-    e.preventDefault()
-    setActive(!isActive)
+  const toggle = index => {
+    if (clicked === index) {
+      return setClicked(null)
+    }
+    setClicked(index)
   }
 
   return (
@@ -22,9 +24,10 @@ const ServicesType = props => {
                 </div>
                 <div className="w-10/12 lg:mr-1/12">What we offer</div>
               </h3>
+              {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
               <h4 className="flex text-xl font-bold tracking-wide	uppercase mb-4 md:text-2xl">
                 <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12 w-4px"></div>
-                Cyber Resistence
+                {props.data.title}
               </h4>
             </div>
           </div>
@@ -32,7 +35,7 @@ const ServicesType = props => {
       </div>
       <div className="custom-container w-full mb-8 md:mb-16 lg:mb-24">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {props.data.service.map(item => (
+          {props.data.service.map((item, index) => (
             <div className="service relative shadowXl overflow-hidden">
               <div className="p-8 text-center">
                 <div className="flex items-end h-32 mb-10">
@@ -47,37 +50,35 @@ const ServicesType = props => {
                 </h3>
                 <button
                   className="inline-block py-1 px-3 bg-darkblue tracking-widest uppercase text-white text-center border-4 border-darkblue transition ease-in-out duration-200 hover:bg-white hover:text-darkblue"
-                  onClick={handleToggle}
+                  onClick={() => toggle(index)}
+                  key={index}
                 >
                   Learn More
                 </button>
-              </div>
-              <div
-                className={
-                  isActive
-                    ? "hidden"
-                    : "absolute top-0 left-0 w-full h-full bg-darkerlightergray p-8 overflow-scroll"
-                }
-              >
-                <div className="flex justify-between mb-8">
-                  <h5 className="text-lg tracking-widest font-bold uppercase border-l-4 border-pink pl-4">
-                    {item.titleService}
-                  </h5>
-                  <button className="" onClick={handleToggle}>
-                    x
-                  </button>
-                </div>
-                <div
-                  dangerouslySetInnerHTML={{ __html: item.contentService }}
-                  className="text-sm"
-                />
-                <img
-                  src={item.iconService.sourceUrl}
-                  className="absolute bottom-6 right-6 block filter grayscale opacity-10"
-                  width="100"
-                  height="100"
-                  alt="#"
-                />
+
+                {clicked === index && (
+                  <div className="absolute top-0 left-0 w-full h-full bg-darkerlightergray p-8 text-left overflow-scroll">
+                    <div className="flex justify-between mb-8">
+                      <h5 className="text-lg tracking-widest font-bold uppercase border-l-4 border-pink pl-4">
+                        {item.titleService}
+                      </h5>
+                      <button className="" onClick={() => toggle(index)}>
+                        x
+                      </button>
+                    </div>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: item.contentService }}
+                      className="text-sm"
+                    />
+                    <img
+                      src={item.iconService.sourceUrl}
+                      className="absolute bottom-6 right-6 block filter grayscale opacity-10"
+                      width="100"
+                      height="100"
+                      alt="#"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}
