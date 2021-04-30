@@ -6,7 +6,7 @@ const Header = props => {
   return (
     <section
       id="header"
-      className="text-white bg-darkblue relative border-t-8 border-pink overflow-hidden"
+      className="text-white bg-darkblue relative overflow-hidden"
     >
       <div className="custom-container flex relative z-30 overflow-hidden">
         <div className="w-full flex flex-wrap items-center">
@@ -71,7 +71,7 @@ const Header = props => {
       <div className="hidden lg:flex w-full items-end h-80 overflow-hidden justify-end absolute top-0 left-40 z-20">
         {props.data.dots && (
           <StaticImage
-            src="../images/dots.svg"
+            src="../images/svg/dots.svg"
             alt="dots"
             placeholder="blurred"
           />

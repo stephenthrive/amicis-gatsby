@@ -9,7 +9,7 @@ const MainMenu = () => {
   }
 
   return (
-    <section>
+    <section className="sticky top-0 z-50 bg-white border-b-8 border-pink ">
       <div className="custom-container py-8 flex flex-col sm:flex-row sm:items-center justify-between relative">
         <Link to="/">
           <svg

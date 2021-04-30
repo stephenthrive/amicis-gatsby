@@ -29,47 +29,48 @@ const WpPage = data => {
       </Helmet>
       <TopHeader />
       <MainMenu data={data} />
-      {data.pageContext.acf_components.components.map(acf => {
+      {data.pageContext.acf_components.components.map((acf, index) => {
         if (acf.__typename === "WpPage_AcfComponents_Components_Header") {
-          return <Header data={acf} />
+          return <Header key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Intro") {
-          return <Intro data={acf} />
+          return <Intro key={index} data={acf} />
         }
         if (
           acf.__typename === "WpPage_AcfComponents_Components_IndustryCyber"
         ) {
-          return <IndustryCyber data={acf} />
+          return <IndustryCyber key={index} data={acf} />
         }
         if (
           acf.__typename === "WpPage_AcfComponents_Components_IndustryTraining"
         ) {
-          return <IndustryTraining data={acf} />
+          return <IndustryTraining key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_GetToKnowUs") {
-          return <GetToKnow data={acf} />
+          return <GetToKnow key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ContactForm") {
-          return <ContactForm data={acf} />
+          return <ContactForm key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Logos") {
-          return <Logos data={acf} />
+          return <Logos key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Icons") {
-          return <Icons data={acf} />
+          return <Icons key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Services") {
-          return <Services data={acf} />
+          return <Services key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ServicesType") {
-          return <ServicesType data={acf} />
+          return <ServicesType key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Teams") {
-          return <Team data={acf} />
+          return <Team key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_FullContent") {
-          return <FullContent data={acf} />
+          return <FullContent key={index} data={acf} />
         }
+        return null
       })}
       <Footer />
     </main>

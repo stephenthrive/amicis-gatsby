@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import Close from "../images/svg/close-icon.inline.svg"
 
 const ServicesType = props => {
   const [clicked, setClicked] = useState(false)
@@ -36,22 +37,25 @@ const ServicesType = props => {
       <div className="custom-container w-full mb-8 md:mb-16 lg:mb-24">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {props.data.service.map((item, index) => (
-            <div className="service relative shadowXl overflow-hidden">
+            <div
+              key={index}
+              className="service relative shadowXl overflow-hidden"
+            >
               <div className="p-8 text-center">
-                <div className="flex items-end h-32 mb-10">
+                <div className="icon flex items-end h-32 mb-10 transition delay-150 duration-300 ease-in-out transform">
                   <img
                     src={item.iconService.sourceUrl}
                     className="block mx-auto"
                     alt="#"
                   />
                 </div>
-                <h3 class="text-lg tracking-widest uppercase mb-10">
+                <h3 className="text-lg tracking-widest uppercase mb-10">
                   {item.titleService}
                 </h3>
                 <button
-                  className="inline-block py-1 px-3 bg-darkblue tracking-widest uppercase text-white text-center border-4 border-darkblue transition ease-in-out duration-200 hover:bg-white hover:text-darkblue"
-                  onClick={() => toggle(index)}
                   key={index}
+                  onClick={() => toggle(index)}
+                  className="inline-block py-1 px-3 bg-darkblue tracking-widest uppercase text-white text-center border-4 border-darkblue transition ease-in-out duration-200 hover:bg-white hover:text-darkblue"
                 >
                   Learn More
                 </button>
@@ -62,8 +66,11 @@ const ServicesType = props => {
                       <h5 className="text-lg tracking-widest font-bold uppercase border-l-4 border-pink pl-4">
                         {item.titleService}
                       </h5>
-                      <button className="" onClick={() => toggle(index)}>
-                        x
+                      <button
+                        className="block w-5 h-5"
+                        onClick={() => toggle(index)}
+                      >
+                        <Close />
                       </button>
                     </div>
                     <div
@@ -85,7 +92,7 @@ const ServicesType = props => {
 
           <div className="service relative shadowXl">
             <div className="p-8 text-center bg-darkblue h-full flex justify-center flex-col items-center text-white">
-              <h3 class="text-lg tracking-widest uppercase mb-10">
+              <h3 className="text-lg tracking-widest uppercase mb-10">
                 {props.data.cta.titleCta}
               </h3>
               <Link
