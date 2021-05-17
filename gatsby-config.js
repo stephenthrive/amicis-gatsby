@@ -10,6 +10,7 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this WordPress starter.`,
     author: `@tomphill`,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
