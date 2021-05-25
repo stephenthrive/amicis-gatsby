@@ -169,30 +169,32 @@ const WpPost = data => {
       <section id="splitContent" className="custom-container mb-12">
         {data.pageContext.acf_components.contentColumnLeft && (
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 mt-8">
-            <div className="">
-              <div className="flex mb-4 lg:mb-8">
-                <div className="mr-4">
-                  <div className="w-4px bg-pink h-full"></div>
+            <div>
+              {data.pageContext.acf_components.subheadingColumnLeft && (
+                <div className="flex mb-4 lg:mb-8">
+                  <div className="mr-4">
+                    <div className="w-4px bg-pink h-full"></div>
+                  </div>
+                  <div className="text-darkblue">
+                    <h3 className="font-bold text-2xl mb-2 md:text-3xl leading-tight">
+                      {data.pageContext.acf_components.subheadingColumnLeft}
+                    </h3>
+                  </div>
                 </div>
-                <div className="text-darkblue">
-                  <h3 className="font-bold text-2xl mb-2 md:text-3xl leading-tight">
-                    {data.pageContext.acf_components.subheadingColumnLeft}
-                  </h3>
-                </div>
-              </div>
+              )}
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.pageContext.acf_components.contentColumnLeft,
                 }}
               />
             </div>
-            <div className="">
+            {data.pageContext.acf_components.imageColumnRight && (
               <GatsbyImage
                 image={imageContent}
                 alt={data.pageContext.acf_components.imageColumnRight.altText}
                 title={data.pageContext.acf_components.imageColumnRight.title}
               />
-            </div>
+            )}
           </div>
         )}
       </section>
