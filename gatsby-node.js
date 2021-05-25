@@ -1,5 +1,5 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const result = await graphql(`
+  const pageResult = await graphql(`
     {
       allWpPage {
         nodes {
@@ -91,6 +91,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               ... on WpPage_AcfComponents_Components_GetToKnowUs {
                 title
               }
+              ... on WpPage_AcfComponents_Components_LatestNews {
+                fieldGroupName
+              }
               ... on WpPage_AcfComponents_Components_ContactForm {
                 fieldGroupName
               }
@@ -153,6 +156,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               ... on WpPage_AcfComponents_Components_FullContent {
                 content
               }
+              ... on WpPage_AcfComponents_Components_News {
+                fieldGroupName
+              }
             }
           }
           seo {
@@ -165,18 +171,76 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (result.errors) {
-    reporter.error("There was an error fetching posts", result.errors)
+  if (pageResult.errors) {
+    reporter.error("There was an error fetching posts", pageResult.errors)
   }
 
-  const { allWpPage } = result.data
+  const { allWpPage } = pageResult.data
 
-  let template = require.resolve(`./src/templates/index.js`)
+  let pageTemplate = require.resolve(`./src/templates/index.js`)
 
-  allWpPage.nodes.map(post => {
+  allWpPage.nodes.map(page => {
+    actions.createPage({
+      path: page.uri,
+      component: pageTemplate,
+      context: page,
+    })
+  })
+
+  const postResult = await graphql(`
+    {
+      allWpPost {
+        nodes {
+          id
+          title
+          date
+          uri
+          acf_components {
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(placeholder: NONE, backgroundColor: "#191D35")
+                }
+              }
+              title
+              altText
+            }
+            mainContent
+            excerpt
+            subheadingColumnLeft
+            contentColumnLeft
+            imageColumnRight {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(placeholder: NONE, backgroundColor: "#191D35")
+                }
+              }
+              title
+              altText
+            }
+          }
+          seo {
+            title
+            metaDesc
+            metaKeywords
+          }
+        }
+      }
+    }
+  `)
+
+  if (postResult.errors) {
+    reporter.error("There was an error fetching posts", postResult.errors)
+  }
+
+  const { allWpPost } = postResult.data
+
+  let postTemplate = require.resolve(`./src/templates/post.js`)
+
+  allWpPost.nodes.map(post => {
     actions.createPage({
       path: post.uri,
-      component: template,
+      component: postTemplate,
       context: post,
     })
   })

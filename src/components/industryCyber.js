@@ -9,14 +9,12 @@ const IndustryCyber = props => {
         <div className="w-full flex flex-wrap">
           <div className="w-full hidden lg:block lg:w-1/2">
             {props.data.image && (
-              <>
-                <GatsbyImage
-                  image={image}
-                  alt={props.data.image.alt}
-                  title={props.data.image.title}
-                  className="block w-full mb-6 md:mb-8 lg:mb-0"
-                />
-              </>
+              <GatsbyImage
+                image={image}
+                alt={props.data.image.alt}
+                title={props.data.image.title}
+                className="block w-full mb-6 md:mb-8 lg:mb-0"
+              />
             )}
           </div>
           <div className="w-full flex flex-wrap items-center lg:w-1/2">

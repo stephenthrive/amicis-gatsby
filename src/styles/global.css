@@ -279,3 +279,24 @@ body {
 #team p {
   @apply mb-4;
 }
+
+/* ######################## latest news ########################*/
+
+#latestnews {
+  /* background-image: url(../images/svg/cyber-pattern.svg);
+  background-size: contain;
+  background-repeat: no-repeat; */
+}
+
+/* ######################## post ########################*/
+
+#fullContent p {
+  @apply mb-4;
+}
+
+#splitcontent h2 {
+}
+
+#splitContent p {
+  @apply mb-4;
+}

@@ -162,6 +162,15 @@ const MainMenu = () => {
             </li>
             <li className="leading-none sm:ml-6 sm:border-l-2 sm:border-pink sm:pl-6">
               <Link
+                to="/news"
+                className="uppercase font-semibold tracking-widest text-darkblue transition-all hover:opacity-50 text-xl pb-1 border-white border-b-2 py-3 sm:pt-0 block sm:inline-block"
+                activeClassName="text-pink"
+              >
+                News
+              </Link>
+            </li>
+            <li className="leading-none sm:ml-6 sm:border-l-2 sm:border-pink sm:pl-6">
+              <Link
                 to="/contact"
                 className="uppercase font-semibold tracking-widest text-darkblue transition-all hover:opacity-50 text-xl pb-1 border-white border-b-2 py-3 sm:pt-0 block sm:inline-block"
                 activeClassName="text-pink"

@@ -9,6 +9,7 @@ import Intro from "../components/intro.js"
 import IndustryCyber from "../components/industryCyber.js"
 import IndustryTraining from "../components/industryTraining.js"
 import GetToKnow from "../components/gettoknow.js"
+import LatestNews from "../components/latestNews.js"
 import ContactForm from "../components/contact.js"
 import Logos from "../components/logos.js"
 import Icons from "../components/icons.js"
@@ -16,6 +17,7 @@ import Services from "../components/services.js"
 import ServicesType from "../components/servicesType.js"
 import Team from "../components/team.js"
 import FullContent from "../components/fullContent.js"
+import News from "../components/news.js"
 import Footer from "../components/footer.js"
 
 const WpPage = data => {
@@ -49,6 +51,9 @@ const WpPage = data => {
         if (acf.__typename === "WpPage_AcfComponents_Components_GetToKnowUs") {
           return <GetToKnow key={index} data={acf} />
         }
+        if (acf.__typename === "WpPage_AcfComponents_Components_LatestNews") {
+          return <LatestNews key={index} data={acf} />
+        }
         if (acf.__typename === "WpPage_AcfComponents_Components_ContactForm") {
           return <ContactForm key={index} data={acf} />
         }
@@ -69,6 +74,9 @@ const WpPage = data => {
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_FullContent") {
           return <FullContent key={index} data={acf} />
+        }
+        if (acf.__typename === "WpPage_AcfComponents_Components_News") {
+          return <News key={index} data={acf} />
         }
         return null
       })}
