@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Moment from "react-moment"
 
@@ -16,6 +16,15 @@ const news = () => {
               date
               uri
               acf_components {
+                image {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                  title
+                  altText
+                }
                 excerpt
               }
             }
@@ -30,11 +39,13 @@ const news = () => {
               <div className="grid gap-4 md:grid-cols-2 my-8 md:my-16 lg:my-24 xlg:grid-cols-3">
                 {data.allWpPost.nodes.map((item, index) => (
                   <div key={index} className="rounded-md shadowXl">
-                    <StaticImage
-                      src="../images/twitter1.png"
-                      alt="twitter 1"
-                      placeholder="blurred"
-                      className="w-full mb-6 md:mb-8 lg:mb-0 rounded-t-md"
+                    <GatsbyImage
+                      image={
+                        item.acf_components.image.localFile.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt={item.acf_components.image.altText}
+                      title={item.acf_components.image.title}
                     />
                     <div className="text-darkblue">
                       <div className="relative px-4 py-6">

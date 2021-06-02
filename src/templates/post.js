@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Moment from "react-moment"
 
@@ -13,7 +13,6 @@ import Footer from "../components/footer.js"
 import { Link } from "gatsby"
 
 const WpPost = data => {
-  const imageHeader = getImage(data.pageContext.acf_components.image.localFile)
   const imageContent = getImage(
     data.pageContext.acf_components.imageColumnRight.localFile
   )
@@ -85,10 +84,15 @@ const WpPost = data => {
           </div>
         </div>
         <div className="hidden lg:flex w-full h-80 overflow-hidden justify-end absolute top-0 z-10 bg-darkblue">
-          <GatsbyImage
+          {/* <GatsbyImage
             image={imageHeader}
             alt={data.pageContext.acf_components.image.altText}
             title={data.pageContext.acf_components.image.title}
+            className="w-5/12 bg-darkblue"
+          /> */}
+          <StaticImage
+            src="../images/post-header.jpg"
+            alt="A kitten"
             className="w-5/12 bg-darkblue"
           />
         </div>

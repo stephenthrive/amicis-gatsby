@@ -196,15 +196,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           date
           uri
           acf_components {
-            image {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(placeholder: NONE, backgroundColor: "#191D35")
-                }
-              }
-              title
-              altText
-            }
             mainContent
             excerpt
             subheadingColumnLeft
