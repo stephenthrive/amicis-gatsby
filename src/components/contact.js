@@ -9,19 +9,19 @@ const Contact = props => {
             <div className="w-full lg:w-1/2">
               <div>
                 <div className="flex">
-                  <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12">
+                  <div className="mr-4 md:mr-8 lg:mr-0 lg:w-16 lg:-ml-4">
                     <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                   </div>
                   <div className="w-10/12 lg:mr-1/12">
                     <h3 className="flex font-bold text-2xl md:text-4xl leading-tight">
-                      Ready to take control of your future?
+                      Take control of cyber threat
                     </h3>
                   </div>
                 </div>
                 <div className="lg:mx-1/12">
                   <p>
-                    Together, we can help you build a better future or build
-                    cyber resilience. Get in touch today.
+                    Get in touch today and together, we’ll build cyber
+                    resilience.
                   </p>
                 </div>
               </div>

@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   }
                 }
               }
-              ... on WpPage_AcfComponents_Components_IndustryCyber {
+              ... on WpPage_AcfComponents_Components_IndustryCta {
                 content
                 title
                 image {
@@ -66,52 +66,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   url
                 }
               }
-              ... on WpPage_AcfComponents_Components_IndustryTraining {
-                content
+              ... on WpPage_AcfComponents_Components_OurBrands {
                 title
-                image {
-                  title
-                  altText
-                  localFile {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 919
-                        height: 562
-                        placeholder: NONE
-                      )
+                logos {
+                  logo {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
                     }
+                    title
+                    altText
                   }
                 }
-                button {
-                  target
-                  title
-                  url
-                }
               }
-              ... on WpPage_AcfComponents_Components_GetToKnowUs {
+              ... on WpPage_AcfComponents_Components_OurPartners {
                 title
+                logos {
+                  logo {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                    title
+                    altText
+                  }
+                }
               }
               ... on WpPage_AcfComponents_Components_LatestNews {
                 fieldGroupName
               }
               ... on WpPage_AcfComponents_Components_ContactForm {
                 fieldGroupName
-              }
-              ... on WpPage_AcfComponents_Components_Logos {
-                logosContent {
-                  __typename
-                  ... on WpPage_AcfComponents_Components_Logos_LogosContent_LogosContentFlexible {
-                    logo
-                  }
-                }
-              }
-              ... on WpPage_AcfComponents_Components_Icons {
-                iconsContent {
-                  ... on WpPage_AcfComponents_Components_Icons_IconsContent_IconsContentFlexible {
-                    icon
-                    title
-                  }
-                }
               }
               ... on WpPage_AcfComponents_Components_ServicesType {
                 title
@@ -136,18 +123,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               }
               ... on WpPage_AcfComponents_Components_Teams {
                 title
-                profiles {
-                  content
-                  name
-                  title
-                  linkedinUrl
-                  image {
-                    altText
-                    sourceUrl
+                board {
+                  boardTitle
+                  profiles {
+                    name
                     title
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData(placeholder: DOMINANT_COLOR)
+                    content
+                    image {
+                      id
+                      title
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData(placeholder: DOMINANT_COLOR)
+                        }
                       }
                     }
                   }

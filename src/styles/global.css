@@ -194,26 +194,14 @@ body {
   }
 }
 
-/* ######################## industryCyber ########################*/
+/* ######################## industryCta ########################*/
 
-#industryCyber p {
+#IndustryCta p {
   @apply mb-8;
 }
 
 @media (min-width: 640px) {
-  #industryCyber p {
-    @apply text-xl;
-  }
-}
-
-/* ######################## industryTraining ########################*/
-
-#industryTraining p {
-  @apply mb-8;
-}
-
-@media (min-width: 640px) {
-  #industryTraining p {
+  #IndustryCta p {
     @apply text-xl;
   }
 }
@@ -236,24 +224,6 @@ body {
   }
 }
 
-/* ######################## services ########################*/
-
-#services p {
-  @apply text-base;
-}
-
-@media (min-width: 640px) {
-  #services p {
-    @apply text-xl;
-  }
-}
-
-@media (min-width: 1024px) {
-  #services p {
-    @apply mb-8;
-  }
-}
-
 /* ######################## services type ########################*/
 
 #serviceType .service p:not(:last-child) {
@@ -265,9 +235,7 @@ body {
 }
 
 #serviceType .marker {
-  @apply absolute bottom-0 left-1/12;
-  width: 0;
-  height: 0;
+  @apply absolute bottom-0 left-1/12 w-0 h-0;
   margin-bottom: -22px;
   border-style: solid;
   border-width: 22px 30px 0 30px;
@@ -283,9 +251,9 @@ body {
 /* ######################## latest news ########################*/
 
 #latestnews {
-  /* background-image: url(../images/svg/cyber-pattern.svg);
+  background-image: url(../images/svg/cyber-pattern.svg);
   background-size: contain;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 
 /* ######################## post ########################*/

@@ -4,20 +4,19 @@ import { Helmet } from "react-helmet"
 
 import TopHeader from "../components/topHeader.js"
 import MainMenu from "../components/menus/mainMenu.js"
+
 import Header from "../components/header.js"
 import Intro from "../components/intro.js"
-import IndustryCyber from "../components/industryCyber.js"
-import IndustryTraining from "../components/industryTraining.js"
-import GetToKnow from "../components/gettoknow.js"
+import IndustryCta from "../components/industryCta.js"
+import OurBrands from "../components/ourBrands.js"
+import OurPartners from "../components/ourPartners.js"
 import LatestNews from "../components/latestNews.js"
 import ContactForm from "../components/contact.js"
-import Logos from "../components/logos.js"
-import Icons from "../components/icons.js"
-import Services from "../components/services.js"
 import ServicesType from "../components/servicesType.js"
 import Team from "../components/team.js"
 import FullContent from "../components/fullContent.js"
 import News from "../components/news.js"
+
 import Footer from "../components/footer.js"
 
 const WpPage = data => {
@@ -38,33 +37,20 @@ const WpPage = data => {
         if (acf.__typename === "WpPage_AcfComponents_Components_Intro") {
           return <Intro key={index} data={acf} />
         }
-        if (
-          acf.__typename === "WpPage_AcfComponents_Components_IndustryCyber"
-        ) {
-          return <IndustryCyber key={index} data={acf} />
+        if (acf.__typename === "WpPage_AcfComponents_Components_IndustryCta") {
+          return <IndustryCta key={index} data={acf} />
         }
-        if (
-          acf.__typename === "WpPage_AcfComponents_Components_IndustryTraining"
-        ) {
-          return <IndustryTraining key={index} data={acf} />
+        if (acf.__typename === "WpPage_AcfComponents_Components_OurBrands") {
+          return <OurBrands key={index} data={acf} />
         }
-        if (acf.__typename === "WpPage_AcfComponents_Components_GetToKnowUs") {
-          return <GetToKnow key={index} data={acf} />
+        if (acf.__typename === "WpPage_AcfComponents_Components_OurPartners") {
+          return <OurPartners key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_LatestNews") {
           return <LatestNews key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ContactForm") {
           return <ContactForm key={index} data={acf} />
-        }
-        if (acf.__typename === "WpPage_AcfComponents_Components_Logos") {
-          return <Logos key={index} data={acf} />
-        }
-        if (acf.__typename === "WpPage_AcfComponents_Components_Icons") {
-          return <Icons key={index} data={acf} />
-        }
-        if (acf.__typename === "WpPage_AcfComponents_Components_Services") {
-          return <Services key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ServicesType") {
           return <ServicesType key={index} data={acf} />

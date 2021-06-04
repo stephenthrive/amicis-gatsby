@@ -19,7 +19,7 @@ const latestNews = () => {
                 image {
                   localFile {
                     childImageSharp {
-                      gatsbyImageData
+                      gatsbyImageData(width: 700, height: 430, placeholder: BLURRED)
                     }
                   }
                   title

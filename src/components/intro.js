@@ -50,7 +50,7 @@ const Intro = props => {
             )}
 
             {props.data.ctaColumnRight && (
-              <div className="space-y-4 sm:space-x-4 lg:ml-1/12 lg:space-x-0">
+              <div className="space-y-4 sm:space-x-4 lg:space-x-0">
                 {props.data.ctaColumnRight.map(item => (
                   <Link to={item.buttonRight.url} className="btn inline-block">
                     {item.buttonRight.title}

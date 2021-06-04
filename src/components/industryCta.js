@@ -1,10 +1,10 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const IndustryCyber = props => {
+const IndustryCta = props => {
   const image = getImage(props.data.image.localFile)
   return (
-    <section id="industryCyber" className="bg-pink">
+    <section id="IndustryCta" className="bg-pink">
       <div className="flex text-white">
         <div className="w-full flex flex-wrap">
           <div className="w-full hidden lg:block lg:w-1/2">
@@ -54,4 +54,4 @@ const IndustryCyber = props => {
   )
 }
 
-export default IndustryCyber
+export default IndustryCta

@@ -89,20 +89,21 @@ const ServicesType = props => {
               </div>
             </div>
           ))}
-
-          <div className="service relative shadowXl">
-            <div className="p-8 text-center bg-darkblue h-full flex justify-center flex-col items-center text-white">
-              <h3 className="text-lg tracking-widest uppercase mb-10">
-                {props.data.cta.titleCta}
-              </h3>
-              <Link
-                to={props.data.cta.linkCta.url}
-                className="inline-block py-1 px-3 bg-pink tracking-widest uppercase text-white text-center border-4 border-pink transition ease-in-out duration-200 hover:bg-darkblue"
-              >
-                Learn More
-              </Link>
+          {props.data.cta.titleCta && (
+            <div className="service relative shadowXl">
+              <div className="p-8 text-center bg-darkblue h-full flex justify-center flex-col items-center text-white">
+                <h3 className="text-lg tracking-widest uppercase mb-10">
+                  {props.data.cta.titleCta}
+                </h3>
+                <Link
+                  to={props.data.cta.linkCta.url}
+                  className="inline-block py-1 px-3 bg-pink tracking-widest uppercase text-white text-center border-4 border-pink transition ease-in-out duration-200 hover:bg-darkblue"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
