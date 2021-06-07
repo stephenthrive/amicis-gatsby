@@ -43,7 +43,7 @@ const BoardType = props => {
               {clicked === index && (
                 <div
                   key={index}
-                  className="block absolute top-0 z-10 w-full p-4 bg-white lg:flex lg:justify-between lg:items-start lg:h-full lg:p-12"
+                  className="block absolute top-0 z-10 w-full p-4 bg-white lg:flex lg:justify-between lg:items-start lg:p-12"
                 >
                   <div className="lg:w-4/12">
                     {profile.image && (

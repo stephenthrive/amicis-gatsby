@@ -1,4 +1,5 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const OurPartners = props => {
   return (
@@ -18,18 +19,18 @@ const OurPartners = props => {
             </div>
           )}
         </div>
-        <div className="md:flex md:flex-wrap md:justify-center">
+        <div className="md:flex md:flex-wrap md:justify-center md:-mx-4">
           {props.data.logos.map((item, index) => (
             <div
               key={index}
-              class="mb-8 md:w-6/12 lg:flex lg:justify-center lg:items-start lg:w-3/12"
+              class="mb-8 md:w-6/12 md:px-4 lg:flex lg:justify-center lg:items-start lg:w-3/12"
             >
-              <img
-                src={item.logo.sourceUrl}
-                width={item.logo.mediaDetails.width}
-                height={item.logo.mediaDetails.height}
-                title={item.logo.title}
+              <GatsbyImage
+                image={getImage(item.logo.localFile)}
+                width={item.logoWidth}
+                height={item.logoHeight}
                 alt={item.logo.altText}
+                title={item.logo.title}
               />
             </div>
           ))}

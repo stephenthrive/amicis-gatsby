@@ -70,10 +70,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 title
                 logos {
                   logo {
-                    sourceUrl
-                    mediaDetails {
-                      width
-                      height
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 230
+                          height: 148
+                          placeholder: DOMINANT_COLOR
+                        )
+                      }
                     }
                     title
                     altText
@@ -84,10 +88,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 title
                 logos {
                   logo {
-                    sourceUrl
-                    mediaDetails {
-                      width
-                      height
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 230
+                          height: 148
+                          placeholder: DOMINANT_COLOR
+                        )
+                      }
                     }
                     title
                     altText
