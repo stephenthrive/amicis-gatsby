@@ -151,7 +151,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                       altText
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(placeholder: DOMINANT_COLOR)
+                          gatsbyImageData(
+                            width: 800
+                            height: 800
+                            placeholder: DOMINANT_COLOR
+                          )
                         }
                       }
                     }

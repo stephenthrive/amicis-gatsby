@@ -40,7 +40,7 @@ const Intro = props => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <div className="lg:px-1/12 lg:ml-2">
+          <div className="space-y-4 lg:px-1/12 lg:ml-2 lg:space-x-0">
             {props.data.contentColumnRight && (
               <div
                 dangerouslySetInnerHTML={{
