@@ -3,7 +3,7 @@ import BoardType from "../components/boardType.js"
 
 const Team = props => {
   return (
-    <section id="team" className="bg-darkblue">
+    <section id="team" className="relative bg-darkblue">
       <div className="custom-container py-12 lg:py-24">
         <div className="mb-8 md:mb-16">
           <div className="flex">
@@ -19,7 +19,7 @@ const Team = props => {
             </div>
           </div>
         </div>
-        <div className="relative space-y-16">
+        <div className="space-y-16">
           {props.data.board.map((item, index) => (
             <BoardType key={index} board={item} />
           ))}

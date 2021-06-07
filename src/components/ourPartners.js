@@ -23,7 +23,7 @@ const OurPartners = props => {
           {props.data.logos.map((item, index) => (
             <div
               key={index}
-              class="mb-8 md:w-6/12 md:px-4 lg:flex lg:justify-center lg:items-start lg:w-3/12"
+              className="mb-8 md:w-6/12 md:px-4 lg:flex lg:justify-center lg:items-start lg:w-3/12"
             >
               <GatsbyImage
                 image={getImage(item.logo.localFile)}

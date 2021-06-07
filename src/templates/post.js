@@ -103,13 +103,7 @@ const WpPost = data => {
           <Moment format="Do MMMM, YYYY">{data.pageContext.date}</Moment>
           <div className="flex">
             <a
-              href={
-                "http://twitter.com/home/?status=" +
-                data.pageContext.title +
-                " - " +
-                "https://amiscisgatsbymaster.gatsbyjs.io" +
-                data.pageContext.uri
-              }
+              href={`https://twitter.com/intent/tweet/?text=${data.pageContext.title} - https://amiscisgatsbymaster.gatsbyjs.io/${data.pageContext.uri}%2F&via=AmicisGroup`}
               target="_blank"
               title="Tweet this!"
               rel="noreferrer"
@@ -130,14 +124,8 @@ const WpPost = data => {
                 />
               </svg>
             </a>
-
             <a
-              href={
-                "https://www.linkedin.com/shareArticle?mini=true&amp;title=" +
-                data.pageContext.title +
-                "&amp;url='https://amiscisgatsbymaster.gatsbyjs.io'" +
-                data.pageContext.uri
-              }
+              href={`http://www.linkedin.com/shareArticle?mini=true&url=https://amicisgatsbymaster.gatsbyjs.io/${data.pageContext.uri}/&title=${data.pageContext.title}`}
               target="_blank"
               title="Share on LinkedIn"
               rel="noreferrer"
