@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Moment from "react-moment"
 
-const news = () => {
+const News = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -85,4 +85,4 @@ const news = () => {
   )
 }
 
-export default news
+export default News

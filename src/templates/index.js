@@ -13,6 +13,7 @@ import OurPartners from "../components/ourPartners.js"
 import LatestNews from "../components/latestNews.js"
 import ContactForm from "../components/contact.js"
 import ServicesType from "../components/servicesType.js"
+import Sectors from "../components/sectors.js"
 import Team from "../components/team.js"
 import FullContent from "../components/fullContent.js"
 import News from "../components/news.js"
@@ -54,6 +55,9 @@ const WpPage = data => {
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ServicesType") {
           return <ServicesType key={index} data={acf} />
+        }
+        if (acf.__typename === "WpPage_AcfComponents_Components_Sectors") {
+          return <Sectors key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_Teams") {
           return <Team key={index} data={acf} />

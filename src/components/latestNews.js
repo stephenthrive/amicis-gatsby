@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Moment from "react-moment"
 
-const latestNews = () => {
+const LatestNews = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -19,7 +19,11 @@ const latestNews = () => {
                 image {
                   localFile {
                     childImageSharp {
-                      gatsbyImageData(width: 700, height: 430, placeholder: BLURRED)
+                      gatsbyImageData(
+                        width: 700
+                        height: 430
+                        placeholder: BLURRED
+                      )
                     }
                   }
                   title
@@ -141,4 +145,4 @@ const latestNews = () => {
   )
 }
 
-export default latestNews
+export default LatestNews

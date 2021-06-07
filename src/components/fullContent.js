@@ -1,6 +1,6 @@
 import React from "react"
 
-const fullContent = (props) => {
+const FullContent = (props) => {
   return (
     <section id="fullContent" className="custom-container flex text-darkblue">
       <div className="w-full flex flex-wrap mt-8 md:mt-16 lg:mt-24">
@@ -8,9 +8,9 @@ const fullContent = (props) => {
           {props.data.content && <div className="p-4" dangerouslySetInnerHTML={{__html: props.data.content}} />}
         </div>
       </div>
-    </section> 
+    </section>
   )
 
 }
 
-export default fullContent;
+export default FullContent;

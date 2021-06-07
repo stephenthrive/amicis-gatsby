@@ -121,6 +121,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   }
                 }
               }
+              ... on WpPage_AcfComponents_Components_Sectors {
+                title
+                content
+                sectorTypes {
+                  sectorTitle
+                  icon {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                    title
+                    altText
+                  }
+                }
+              }
               ... on WpPage_AcfComponents_Components_Teams {
                 title
                 board {
