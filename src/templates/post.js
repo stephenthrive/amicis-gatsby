@@ -84,15 +84,9 @@ const WpPost = data => {
           </div>
         </div>
         <div className="hidden lg:flex w-full h-80 overflow-hidden justify-end absolute top-0 z-10 bg-darkblue">
-          {/* <GatsbyImage
-            image={imageHeader}
-            alt={data.pageContext.acf_components.image.altText}
-            title={data.pageContext.acf_components.image.title}
-            className="w-5/12 bg-darkblue"
-          /> */}
           <StaticImage
             src="../images/post-header.jpg"
-            alt="A kitten"
+            alt="#"
             className="w-5/12 bg-darkblue"
           />
         </div>
@@ -160,8 +154,8 @@ const WpPost = data => {
       </section>
       <section id="splitContent" className="custom-container mb-12">
         {data.pageContext.acf_components.contentColumnLeft && (
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 mt-8">
-            <div>
+          <div className=" gap-8 lg:flex mt-8">
+            <div className="lg:w-1/2">
               {data.pageContext.acf_components.subheadingColumnLeft && (
                 <div className="flex mb-4 lg:mb-8">
                   <div className="mr-4">
@@ -174,18 +168,22 @@ const WpPost = data => {
                   </div>
                 </div>
               )}
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.pageContext.acf_components.contentColumnLeft,
-                }}
-              />
+              {data.pageContext.acf_components.contentColumnLeft && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.pageContext.acf_components.contentColumnLeft,
+                  }}
+                />
+              )}
             </div>
             {data.pageContext.acf_components.imageColumnRight && (
-              <GatsbyImage
-                image={imageContent}
-                alt={data.pageContext.acf_components.imageColumnRight.altText}
-                title={data.pageContext.acf_components.imageColumnRight.title}
-              />
+              <div className="lg:w-1/2">
+                <GatsbyImage
+                  image={imageContent}
+                  alt={data.pageContext.acf_components.imageColumnRight.altText}
+                  title={data.pageContext.acf_components.imageColumnRight.title}
+                />
+              </div>
             )}
           </div>
         )}
