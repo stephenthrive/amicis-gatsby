@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Close from "../images/svg/close-icon.inline.svg"
 
 const ServicesType = props => {
@@ -88,7 +88,7 @@ const ServicesType = props => {
               </div>
             </div>
           ))}
-          {props.data.cta.titleCta && (
+          {/* {props.data.cta.titleCta && (
             <div className="service relative shadowXl">
               <div className="p-8 text-center bg-darkblue h-full flex justify-center flex-col items-center text-white">
                 <h3 className="text-lg tracking-widest uppercase mb-10">
@@ -102,7 +102,7 @@ const ServicesType = props => {
                 </Link>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
