@@ -56,7 +56,7 @@ const BoardType = props => {
                         />
                       )}
                     </div>
-                    <div className="lg:w-7/12 lg:overflow-scroll">
+                    <div className="lg:w-7/12">
                       <div className="flex justify-between items-center border-l-4 border-pink pl-4 mb-8 lg:pl-8 ">
                         <div>
                           {profile.name && (
