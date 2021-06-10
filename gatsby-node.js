@@ -213,18 +213,72 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           date
           uri
           acf_components {
-            mainContent
-            excerpt
-            subheadingColumnLeft
-            contentColumnLeft
-            imageColumnRight {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(placeholder: NONE, backgroundColor: "#191D35")
+            flexibleContent {
+              __typename
+              ... on WpPost_AcfComponents_FlexibleContent_FullWidth {
+                contentTypes {
+                  __typename
+                  ... on WpPost_AcfComponents_FlexibleContent_FullWidth_ContentTypes_Subheading {
+                    subheading
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_FullWidth_ContentTypes_Content {
+                    content
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_FullWidth_ContentTypes_Image {
+                    image {
+                      title
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                  }
                 }
               }
-              title
-              altText
+              ... on WpPost_AcfComponents_FlexibleContent_SplitWidth {
+                contentTypesLeft {
+                  __typename
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesLeft_Subheading {
+                    subheading
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesLeft_Content {
+                    content
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesLeft_Image {
+                    image {
+                      title
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                  }
+                }
+                contentTypesRight {
+                  __typename
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesRight_Subheading {
+                    subheading
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesRight_Content {
+                    content
+                  }
+                  ... on WpPost_AcfComponents_FlexibleContent_SplitWidth_ContentTypesRight_Image {
+                    image {
+                      title
+                      altText
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
           seo {

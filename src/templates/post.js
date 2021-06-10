@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Moment from "react-moment"
 
@@ -8,14 +8,14 @@ import "nprogress/nprogress.css"
 
 import TopHeader from "../components/topHeader.js"
 import MainMenu from "../components/menus/mainMenu.js"
+import FullWidthContent from "../components/posts/fullWidthContent.js"
+import SplitWidthContent from "../components/posts/splitWidthContent.js"
+
 import ContactForm from "../components/contact.js"
 import Footer from "../components/footer.js"
 import { Link } from "gatsby"
 
 const WpPost = data => {
-  const imageContent = getImage(
-    data.pageContext.acf_components.imageColumnRight.localFile
-  )
   return (
     <main>
       <Helmet>
@@ -26,7 +26,6 @@ const WpPost = data => {
       </Helmet>
       <TopHeader />
       <MainMenu data={data} />
-      {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
       <section
         id="header"
         className="text-white bg-darkblue relative overflow-hidden"
@@ -92,7 +91,7 @@ const WpPost = data => {
         </div>
         <div className="hidden lg:flex w-full items-end h-80 overflow-hidden justify-end absolute top-0 left-40 z-20"></div>
       </section>
-      <section id="fullContent" className="custom-container">
+      <section id="dateCTA" className="custom-container">
         <div className="w-full flex justify-between items-center mt-8 pb-4 border-b border-darkblue">
           <Moment format="Do MMMM, YYYY">{data.pageContext.date}</Moment>
           <div className="flex">
@@ -142,17 +141,23 @@ const WpPost = data => {
             </a>
           </div>
         </div>
-        <div className="w-full flex flex-wrap mt-8 pb-4 border-b border-darkblue">
-          <div className="w-full">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.pageContext.acf_components.mainContent,
-              }}
-            />
-          </div>
-        </div>
       </section>
-      <section id="splitContent" className="custom-container mb-12">
+
+      {data.pageContext.acf_components.flexibleContent.map((acf, index) => {
+        if (
+          acf.__typename === "WpPost_AcfComponents_FlexibleContent_FullWidth"
+        ) {
+          return <FullWidthContent key={index} data={acf} />
+        }
+        if (
+          acf.__typename === "WpPost_AcfComponents_FlexibleContent_SplitWidth"
+        ) {
+          return <SplitWidthContent key={index} data={acf} />
+        }
+        return null
+      })}
+
+      {/* <section id="splitContent" className="custom-container mb-12">
         {data.pageContext.acf_components.contentColumnLeft && (
           <div className=" gap-8 lg:flex mt-8">
             <div className="lg:w-1/2">
@@ -187,12 +192,14 @@ const WpPost = data => {
             )}
           </div>
         )}
-      </section>
+      </section> */}
+
       <section className="custom-container">
         <Link to="/news" className="btn inline-block">
           Back to News
         </Link>
       </section>
+
       <ContactForm />
       <Footer />
     </main>
