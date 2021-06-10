@@ -1,6 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
+import axios from "axios"
 
-const Contact = props => {
+const Contact = () => {
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  })
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    })
+    if (ok) {
+      form.reset()
+    }
+  }
+  const handleOnSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    setServerState({ submitting: true })
+    axios({
+      method: "post",
+      url: "https://getform.io/f/9501af31-ee62-44ae-bf39-e562c77928e8",
+      data: new FormData(form),
+    })
+      .then(r => {
+        handleServerResponse(true, "Thanks!", form)
+      })
+      .catch(r => {
+        handleServerResponse(false, r.response.data.error, form)
+      })
+  }
+
   return (
     <section id="contact" className="bg-white text-darkblue">
       <div className="custom-container flex pt-12">
@@ -83,12 +114,7 @@ const Contact = props => {
               </div>
             </div>
           </div>
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            action="/thank-you"
-          >
+          <form onSubmit={handleOnSubmit}>
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-wrap lg:mb-6">
               <div className="w-full lg:w-1/2">
@@ -189,6 +215,11 @@ const Contact = props => {
                 </div>
               </div>
             </div>
+            {serverState.status && (
+              <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                {serverState.status.msg}
+              </p>
+            )}
           </form>
         </div>
       </div>
