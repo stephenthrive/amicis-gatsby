@@ -98,7 +98,7 @@ const LatestNews = () => {
             <div className="custom-container">
               <div className="grid gap-4 md:grid-cols-2 pb-8 md:pb-16 lg:pb-24 xlg:grid-cols-3">
                 {data.allWpPost.nodes.map((item, index) => (
-                  <div className="bg-white rounded-md shadowXl">
+                  <div key={index} className="bg-white rounded-md shadowXl">
                     <div className="text-darkblue">
                       <GatsbyImage
                         image={

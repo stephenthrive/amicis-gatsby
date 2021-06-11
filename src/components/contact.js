@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
+
 import axios from "axios"
 
 const Contact = () => {
@@ -25,7 +27,11 @@ const Contact = () => {
       data: new FormData(form),
     })
       .then(r => {
-        handleServerResponse(true, "Thanks!", form)
+        handleServerResponse(
+          true,
+          "Thank you for your enquiry. We will get in touch shortly.",
+          form
+        )
       })
       .catch(r => {
         handleServerResponse(false, r.response.data.error, form)
@@ -118,13 +124,13 @@ const Contact = () => {
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-wrap lg:mb-6">
               <div className="w-full lg:w-1/2">
-                <div className="lg:mx-1/12">
+                <div className="mb-2 lg:mx-1/12">
                   <input
-                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none"
+                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue tracking-widest outline-none rounded-none"
                     id="name"
                     name="name"
                     type="text"
-                    placeholder="Name"
+                    placeholder="FULL NAME"
                     required
                   />
                 </div>
@@ -132,11 +138,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2">
                 <div className="lg:mx-1/12">
                   <input
-                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none"
+                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue tracking-widest outline-none rounded-none"
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="EMAIL ADDRESS"
                     required
                   />
                 </div>
@@ -146,11 +152,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2">
                 <div className="lg:mx-1/12">
                   <input
-                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none"
+                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue tracking-widest outline-none rounded-none"
                     id="tel"
                     name="tel"
                     type="tel"
-                    placeholder="Phone"
+                    placeholder="PHONE NUMBER"
                     required
                   />
                 </div>
@@ -158,11 +164,11 @@ const Contact = () => {
               <div className="w-full lg:w-1/2">
                 <div className="lg:mx-1/12">
                   <input
-                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue uppercase tracking-widest outline-none rounded-none"
+                    className="w-full border-b-2 border-pink mb-4 pb-2 placeholder-darkblue tracking-widest outline-none rounded-none"
                     id="company"
                     name="company"
                     type="text"
-                    placeholder="Company"
+                    placeholder="COMPANY"
                     required
                   />
                 </div>
@@ -180,7 +186,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="w-full border-2 border-pink mb-4 p-2 text-darkblue uppercase tracking-widest outline-none rounded-none"
+                    className="w-full border-2 border-pink mb-4 p-2 text-darkblue tracking-widest outline-none rounded-none"
                     required
                   ></textarea>
                 </div>
@@ -194,10 +200,18 @@ const Contact = () => {
                       name="consent"
                       type="checkbox"
                       value="yes"
+                      required
                     />
                     <span>
                       I would like subscribe to updates from Amicis and
-                      understand the privacy policy.
+                      understand the{" "}
+                      <Link
+                        to="/privacy-and-cookies"
+                        className="border-b border-pink pb-1"
+                      >
+                        privacy policy
+                      </Link>
+                      .
                     </span>
                   </label>
                 </div>
@@ -215,11 +229,23 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            {serverState.status && (
-              <p className={!serverState.status.ok ? "errorMsg" : ""}>
-                {serverState.status.msg}
-              </p>
-            )}
+            <div className="flex flex-wrap">
+              <div className="w-full text-center">
+                <div className="lg:mx-1/12">
+                  {serverState.status && (
+                    <h4
+                      className={
+                        !serverState.status.ok
+                          ? "errorMsg"
+                          : "mt-4 text-xl font-bold text-pink"
+                      }
+                    >
+                      {serverState.status.msg}
+                    </h4>
+                  )}
+                </div>
+              </div>
+            </div>
           </form>
         </div>
       </div>
