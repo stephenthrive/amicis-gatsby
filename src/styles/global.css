@@ -258,13 +258,12 @@ body {
 
 /* ######################## post ########################*/
 
-#fullContent p {
+#fullContent p,
+#splitContent p  {
   @apply mb-4;
 }
 
-#splitcontent h2 {
-}
-
-#splitContent p {
-  @apply mb-4;
+#fullContent p a,
+#splitcontent p a {
+  @apply border-b border-darkblue
 }
