@@ -25,10 +25,12 @@ const ServicesType = props => {
                 </div>
                 <div className="w-10/12 lg:mr-1/12">What we offer</div>
               </h3>
-              <h4 className="flex text-xl font-bold tracking-wide	uppercase mb-4 md:text-2xl">
-                <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12 w-4px"></div>
-                {props.data.title}
-              </h4>
+              {props.data.title && (
+                <h4 className="flex text-xl font-bold tracking-wide	uppercase mb-4 md:text-2xl">
+                  <div className="mr-4 md:mr-8 lg:mr-0 lg:w-1/12 w-4px"></div>
+                  {props.data.title}
+                </h4>
+              )}
             </div>
           </div>
         </div>

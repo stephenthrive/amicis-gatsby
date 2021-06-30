@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Intro = props => {
   return (
     <section id="intro" className="custom-container flex text-darkblue">
-      <div className="my-8 md:my-16 lg:flex lg:justify-between lg:my-24">
+      <div className="w-full my-8 md:my-16 lg:flex lg:justify-between lg:my-24">
         <div className="mb-6 lg:w-1/2 lg:mb-0">
           {props.data.title && (
             <div className="flex mb-8 md:mb-12">
@@ -18,7 +18,6 @@ const Intro = props => {
               </div>
             </div>
           )}
-          {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
           <div className="lg:px-1/12 lg:ml-2">
             {props.data.contentColumnLeft && (
               <div
@@ -27,7 +26,6 @@ const Intro = props => {
                 }}
               />
             )}
-
             {props.data.ctaColumnLeft && (
               <>
                 {props.data.ctaColumnLeft.map(item => (

@@ -24,9 +24,11 @@ const IndustryCta = props => {
                   <div className="w-4px bg-white h-full lg:mx-auto"></div>
                 </div>
                 <div className="w-10/12 lg:mr-1/12 lg:ml-2">
-                  <h3 className="font-bold text-2xl md:text-4xl leading-tight">
-                    {props.data.title}
-                  </h3>
+                  {props.data.title && (
+                    <h3 className="font-bold text-2xl md:text-4xl leading-tight">
+                      {props.data.title}
+                    </h3>
+                  )}
                 </div>
               </div>
               <div className="lg:mx-1/12">
