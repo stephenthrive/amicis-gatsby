@@ -11,6 +11,7 @@ import IndustryCta from "../components/industryCta.js"
 import OurBrands from "../components/ourBrands.js"
 import OurPartners from "../components/ourPartners.js"
 import LatestNews from "../components/latestNews.js"
+import LatestNewsCarousel from "../components/latestNewsCarousel.js"
 import ContactForm from "../components/contact.js"
 import ServicesType from "../components/servicesType.js"
 import Sectors from "../components/sectors.js"
@@ -49,6 +50,12 @@ const WpPage = data => {
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_LatestNews") {
           return <LatestNews key={index} data={acf} />
+        }
+        if (
+          acf.__typename ===
+          "WpPage_AcfComponents_Components_LatestNewsCarousel"
+        ) {
+          return <LatestNewsCarousel key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_ContactForm") {
           return <ContactForm key={index} data={acf} />

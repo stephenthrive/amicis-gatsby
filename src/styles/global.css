@@ -256,14 +256,196 @@ body {
   background-repeat: no-repeat;
 }
 
+/* ######################## latest news carousel ########################*/
+
+#latestnewscarousel {
+  background-image: url(../images/svg/cyber-pattern.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#latestnewscarousel .swiper-container {
+  @apply pb-24 overflow-visible;
+}
+
+#latestnewscarousel .swiper-button-next,
+#latestnewscarousel .swiper-button-prev {
+  position: absolute;
+  @apply bottom-5;
+  z-index: 30;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#latestnewscarousel .swiper-button-next.swiper-button-disabled,
+#latestnewscarousel .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+#latestnewscarousel .swiper-button-prev,
+#latestnewscarousel .swiper-container-rtl .swiper-button-next {
+  left: 10px;
+  right: auto;
+}
+
+#latestnewscarousel .swiper-button-prev:before,
+#latestnewscarousel .swiper-container-rtl .swiper-button-next:before {
+  content: "";
+  width: 22px;
+  height: 38px;
+  background: url(../images/svg/prev-arrow.svg);
+}
+
+@screen lg {
+  #latestnewscarousel .swiper-button-prev:after,
+  #latestnewscarousel .swiper-container-rtl .swiper-button-next:after {
+    content: "Previous Articles";
+    @apply text-sm uppercase ml-4;
+  }
+}
+
+#latestnewscarousel .swiper-button-next,
+#latestnewscarousel .swiper-container-rtl .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+@screen lg {
+  #latestnewscarousel .swiper-button-next:before,
+  #latestnewscarousel .swiper-container-rtl .swiper-button-prev:before {
+    content: "More Articles";
+    @apply text-sm uppercase mr-4;
+  }
+}
+
+#latestnewscarousel .swiper-button-next:after,
+#latestnewscarousel .swiper-container-rtl .swiper-button-prev:after {
+  content: "";
+  width: 22px;
+  height: 38px;
+  background: url(../images/svg/next-arrow.svg);
+}
+
+#latestnewscarousel .swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+#latestnewscarousel .swiper-pagination.swiper-pagination-hidden {
+  opacity: 0;
+}
+#latestnewscarousel .swiper-container-horizontal > .swiper-pagination-bullets {
+  @apply bottom-7;
+  left: 0;
+  width: 100%;
+}
+
+#latestnewscarousel .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #fff;
+}
+
+#latestnewscarousel button.swiper-pagination-bullet {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#latestnewscarousel .swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+
+#latestnewscarousel .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #e2003a;
+}
+
+#latestnewscarousel .swiper-container-vertical > .swiper-pagination-bullets {
+  right: 10px;
+  top: 50%;
+  transform: translate3d(0px, -50%, 0);
+}
+
+#latestnewscarousel.swiper-container-vertical
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 6px 0;
+  display: block;
+}
+
+#latestnewscarousel
+  .swiper-container-vertical
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+}
+
+#latestnewscarousel
+  .swiper-container-vertical
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
+  display: inline-block;
+  transition: 0.2s transform, 0.2s top;
+}
+
+#latestnewscarousel
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+
+#latestnewscarousel
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+#latestnewscarousel
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
+  transition: 0.2s transform, 0.2s left;
+}
+
+#latestnewscarousel
+  .swiper-container-horizontal.swiper-container-rtl
+  > .swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
+  transition: 0.2s transform, 0.2s right;
+}
+
+.swiper-pagination-lock {
+  display: none;
+}
+
 /* ######################## post ########################*/
 
 #fullContent p,
-#splitContent p  {
+#splitContent p {
   @apply mb-4;
 }
 
 #fullContent p a,
 #splitcontent p a {
-  @apply border-b border-darkblue
+  @apply border-b border-darkblue;
 }
