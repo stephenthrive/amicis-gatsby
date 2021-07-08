@@ -5,9 +5,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           id
           uri
-          template {
-            templateName
-          }
           acf_components {
             components {
               __typename
@@ -331,4 +328,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: post,
     })
   })
+
+  // const landingResult = await graphql(`
+  //   {
+  //   }
+  // `)
+
+  // if (landingResult.errors) {
+  //   reporter.error(
+  //     "There was an error fetching landing page",
+  //     landingResult.errors
+  //   )
+  // }
+
+  // const { allWpPage } = landingResult.data
+
+  // let pageTemplate = require.resolve(`./src/templates/landing.js`)
+
+  // allWpPage.nodes.map(page => {
+  //   actions.createPage({
+  //     path: page.uri,
+  //     component: pageTemplate,
+  //     context: page,
+  //   })
+  // })
 }
