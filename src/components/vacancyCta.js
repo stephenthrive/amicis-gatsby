@@ -4,10 +4,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const VacancyCta = props => {
   const image = getImage(props.data.image.localFile)
   return (
-    <section id="VacancyCta" className="bg-pink">
+    <section id="VacancyCta" className="bg-pink overflow-hidden">
       <div className="flex text-white">
         <div className="w-full flex flex-wrap">
-          <div className="w-full flex flex-wrap items-center lg:w-1/2">
+          <div className="w-full flex flex-wrap items-center xl:w-1/2">
             <div className="w-full max-w-screen-xl-half m-8 md:m-16 lg:my-16 lg:mx-0">
               <div className="flex font-bold text-2xl md:text-4xl leading-tight mb-8 md:mb-12">
                 <div className="mr-4 lg:mr-0 lg:w-1/12">
@@ -40,7 +40,7 @@ const VacancyCta = props => {
               </div>
             </div>
           </div>
-          <div className="w-full hidden lg:block lg:w-3/4 lg:-ml-3/12 lg:transform lg:translate-x-40">
+          <div className="w-full hidden xl:block lg:w-3/4 lg:-ml-3/12 lg:transform lg:translate-x-40">
             {props.data.image && (
               <GatsbyImage
                 image={image}
