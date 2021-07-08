@@ -54,7 +54,7 @@ const News = () => {
                     <div className="text-darkblue">
                       <div className="relative px-4 py-6">
                         <div className="flex mb-4">
-                          <div className="mr-4 lg:mr-0 lg:w-1/12">
+                          <div className="mr-4 lg:w-1/12">
                             <div className="w-4px bg-pink h-full lg:mx-auto"></div>
                           </div>
                           <div className="text-darkblue">

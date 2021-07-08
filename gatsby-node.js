@@ -66,6 +66,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                   url
                 }
               }
+              ... on WpPage_AcfComponents_Components_VacancyCta {
+                content
+                title
+                image {
+                  title
+                  altText
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 935
+                        height: 650
+                        placeholder: NONE
+                      )
+                    }
+                  }
+                }
+                button {
+                  target
+                  title
+                  url
+                }
+              }
               ... on WpPage_AcfComponents_Components_OurBrands {
                 title
                 logos {
@@ -307,6 +329,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  // const landingResult = await graphql(`
+  //   {
+  //   }
+  // `)
 
-  
+  // if (landingResult.errors) {
+  //   reporter.error(
+  //     "There was an error fetching landing page",
+  //     landingResult.errors
+  //   )
+  // }
+
+  // const { allWpPage } = landingResult.data
+
+  // let pageTemplate = require.resolve(`./src/templates/landing.js`)
+
+  // allWpPage.nodes.map(page => {
+  //   actions.createPage({
+  //     path: page.uri,
+  //     component: pageTemplate,
+  //     context: page,
+  //   })
+  // })
 }

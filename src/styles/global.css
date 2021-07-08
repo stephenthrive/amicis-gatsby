@@ -206,6 +206,24 @@ body {
   }
 }
 
+/* ######################## industryCta ########################*/
+
+#VacancyCta p,
+#VacancyCta ul {
+  @apply mb-8;
+}
+
+#VacancyCta ul {
+  @apply ml-5 list-disc;
+}
+
+@media (min-width: 640px) {
+  #VacancyCta p,
+  #VacancyCta ul {
+    @apply text-xl;
+  }
+}
+
 /* ######################## intro ########################*/
 
 #intro p {
@@ -266,6 +284,10 @@ body {
 
 #latestnewscarousel .swiper-container {
   @apply pb-24 overflow-visible;
+}
+
+#latestnewscarousel .swiper-slide {
+  @apply h-auto;
 }
 
 #latestnewscarousel .swiper-button-next,

@@ -44,8 +44,10 @@ const LatestNewsCarousel = () => {
       `}
       render={data => (
         <>
-          {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
-          <section id="latestnewscarousel" className="bg-darkblue text-white">
+          <section
+            id="latestnewscarousel"
+            className="bg-darkblue text-white overflow-hidden"
+          >
             <div className="custom-container flex">
               <div className="w-full flex justify-between items-center py-8 pd:my-16 lg:py-24">
                 <div className="w-5/6 lg:w-1/2">

@@ -8,6 +8,7 @@ import MainMenu from "../components/menus/mainMenu.js"
 import Header from "../components/header.js"
 import Intro from "../components/intro.js"
 import IndustryCta from "../components/industryCta.js"
+import VacancyCta from "../components/vacancyCta.js"
 import OurBrands from "../components/ourBrands.js"
 import OurPartners from "../components/ourPartners.js"
 import LatestNews from "../components/latestNews.js"
@@ -41,6 +42,9 @@ const WpPage = data => {
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_IndustryCta") {
           return <IndustryCta key={index} data={acf} />
+        }
+        if (acf.__typename === "WpPage_AcfComponents_Components_VacancyCta") {
+          return <VacancyCta key={index} data={acf} />
         }
         if (acf.__typename === "WpPage_AcfComponents_Components_OurBrands") {
           return <OurBrands key={index} data={acf} />
